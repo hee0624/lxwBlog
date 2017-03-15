@@ -1,7 +1,7 @@
 ---
 title: From cnblogs to xiaoweiliu.cn
 date: 2017-03-12 23:46:56
-tags: hexo
+tags: Hexo
 ---
 
 [About me](http://xiaoweiliu.cn/about/)  

@@ -8,6 +8,10 @@
   </span>
   <span class="author" itemprop="copyrightHolder">{{ config.author }}
   </span>
+  <!-- busuanzi -->
+  {% if (theme.busuanzi) %}
+    <span> | {% include '../_scripts/analytics/busuanzi.swig' %} </span>
+  {% endif %}
 </div>
 
 <div class="powered-by">
@@ -17,12 +21,5 @@
 <div class="theme-info">
   Theme by <a class="theme-link" href="http://blog.idhyt.com">idhyt</a>.<a class="theme-link" href="https://github.com/idhyt/hexo-theme-next/tree/magiclamp">{{ theme.scheme }}</a>
 </div>
-
-<!-- busuanzi -->
-{% if (theme.busuanzi) %}
-  <div class="">
-    {% include '../_scripts/analytics/busuanzi.swig' %}
-  </div>
-{% endif %}
 
 {% block footer %}{% endblock %}

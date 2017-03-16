@@ -54,12 +54,14 @@
         {% if theme.rss %}
           <div class="feed-link motion-element">
             <a href="{{ url_for(theme.rss) }}" rel="alternate">
+
               <i class="menu-item-icon icon-next-feed"></i>
               RSS
             </a>
           </div>
         {% endif %}
 
+        <!-- lxw
         <div class="links-of-author motion-element">
           {% if theme.social %}
             {% for name, link in theme.social %}
@@ -68,6 +70,28 @@
               </span>
             {% endfor %}
           {% endif %}
+        </div>
+        -->
+
+        <div class="links-of-author motion-element">
+          <span class="links-of-author-item">
+            <a href="https://github.com/lxw0109" target="_blank">
+                <i class="fa fa-github fa-2x"></i>
+            </a>
+            <a href="http://weibo.com/xiaopeien" target="_blank">
+                <i class="fa fa-weibo fa-2x"></i>
+            </a>
+            <a href="http://stackoverflow.com/users/3374961/lxw" target="_blank">
+                <i class="fa fa-stack-overflow fa-2x"></i>
+            </a>
+            <a href="mailto:liu_xiaowei@foxmail.com" target="_blank">
+                <i class="fa fa-envelope fa-2x"></i>
+            </a>
+            <!--
+            <a href="https://plus.google.com/u/0/117086975269574756424" target="_blank">
+                <i class="fa fa-google-plus fa-2x"></i>
+            </a> -->
+          </span>
         </div>
 
         <div class="links-of-friendly motion-element">

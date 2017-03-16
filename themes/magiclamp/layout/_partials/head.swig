@@ -18,6 +18,9 @@
   <meta name="360-site-verification" content="{{ theme.qihu_site_verification }}" />
 {% endif %}
 
+<!-- #lxw -->
+<link rel="stylesheet" href="/css/font-awesome-4.7.0/css/font-awesome.min.css">
+
 {% if theme.fancybox %}
   <link rel="stylesheet" type="text/css" href="{{ url_for(theme.vendors) }}/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
 {% endif %}

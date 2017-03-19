@@ -9,7 +9,6 @@
 
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
-
       {% if is_post %}
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
@@ -132,5 +131,6 @@
       {% endif %}
 
     </div>
+    <a href="https://github.com/lxw0109"><img style="position: absolute; top: -1px; right: -1px; border: 0;" src="/images/forkme.png" alt="Fork me on GitHub"></a>
   </aside>
 {% endmacro %}

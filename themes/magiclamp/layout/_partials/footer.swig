@@ -1,25 +1,13 @@
-<div class="copyright" >
+<div class="theme-info">
   {% set current = date(Date.now(), "YYYY") %}
-  &copy; &nbsp; {% if theme.since and theme.since != current %} {{ theme.since }} - {% endif %}
-  <span itemprop="copyrightYear">{{ current }}
-  </span>
-  <span class="with-love">
-    <i class="icon-next-heart"></i>
-  </span>
+  &copy; {% if theme.since and theme.since != current %} {{ theme.since }} - {% endif %}
+  <span itemprop="copyrightYear"> {{ current }} </span>
   <span class="author" itemprop="copyrightHolder">{{ config.author }}
   </span>
-  <!-- busuanzi -->
   {% if (theme.busuanzi) %}
-    <span> | {% include '../_scripts/analytics/busuanzi.swig' %} </span>
+    <span>&nbsp;|&nbsp;{% include '../_scripts/analytics/busuanzi.swig' %} </span>
   {% endif %}
+  &nbsp;|&nbsp;Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  &nbsp;|&nbsp;Theme by <a class="theme-link" href="http://blog.idhyt.com">idhyt</a>.<a class="theme-link" href="https://github.com/idhyt/hexo-theme-next/tree/magiclamp">{{ theme.scheme }}</a>
 </div>
-
-<div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
-</div>
-
-<div class="theme-info">
-  Theme by <a class="theme-link" href="http://blog.idhyt.com">idhyt</a>.<a class="theme-link" href="https://github.com/idhyt/hexo-theme-next/tree/magiclamp">{{ theme.scheme }}</a>
-</div>
-
 {% block footer %}{% endblock %}

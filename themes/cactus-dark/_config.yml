@@ -1,8 +1,9 @@
 nav:
   Home: /
-  About: /about/
-  Writing: /archives/
-  Projects: http://github.com/lxw0109
+  AboutMe: /about/
+  Blog: /archives/
+  Categories: /categories/
+  Tags: /tags/
 
 projects_url: http://github.com/lxw0109
 
@@ -28,9 +29,9 @@ customize:
         gravator: false
     social_links:
         github: http://github.com/lxw0109
-        weibo: http://weibo.com/xiaopeien
         stack-overflow: http://stackoverflow.com/users/3374961/lxw
-        #email: mailto:liu_xiaowei@foxmail.com
+        weibo: http://weibo.com/xiaopeien
+        envelope: mailto:liu_xiaowei@foxmail.com
     post_count: 5
     highlight: rainbow
 

@@ -64,7 +64,9 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 #theme: magiclamp
-theme: hexadillax
+#theme: hexadillax
+#theme: tranquilpeak    #complicated
+theme: cactus-dark
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

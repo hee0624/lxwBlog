@@ -1,0 +1,51 @@
+nav:
+  Home: /
+  About: /about/
+  Writing: /archives/
+  Projects: http://github.com/lxw0109
+
+projects_url: http://github.com/lxw0109
+
+customize:
+    gravatar:
+        email: liu_xiaowei@foxmail.com
+    logo:
+        enabled: true
+        width: 50
+        height: 50
+        url: /images/lxw.png
+        gravatar: false
+    favicon:
+      # eg. generate with http://realfavicongenerator.net/
+      desktop:
+        url: /images/favicon.ico
+        gravatar: false
+      android:
+        url: /images/favicon.ico
+        gravator: false
+      apple:
+        url: /images/favicon.ico
+        gravator: false
+    social_links:
+        github: http://github.com/lxw0109
+        weibo: http://weibo.com/xiaopeien
+        stack-overflow: http://stackoverflow.com/users/3374961/lxw
+        #email: mailto:liu_xiaowei@foxmail.com
+    post_count: 5
+    highlight: rainbow
+
+# RSS
+rss: false
+
+# Plugins
+plugins:
+    disqus_shortname: # Disqus Comments Shortname
+    google_analytics: UA-86660611-1 # enter the tracking ID for your Google Analytics
+
+# Miscellaneous
+miscellaneous:
+    open_graph: # see http://ogp.me
+        fb_app_id:
+        fb_admins:
+        twitter_id:
+        google_plus:

@@ -8,7 +8,8 @@ Hi, I'm Xiaowei Liu(刘晓伟) from ISCAS(UCAS).
 You can get in touch with me by [Email](mailto:liu_xiaowei@foxmail.com)/[Github](https://github.com/lxw0109).
 
 ## IT skills
-Python is my favourite language, whose simplicity and powerfulness fascinates me. Besides, I'm interested in Computer Network and Linux.
+My favourite programming language is Python, whose simplicity and powerfulness fascinates me. Besides, I'm interested in Computer Network, Linux, and Web Spider.
+My resume in [Chinese](/resume_en/)/[English](/resume_zh/).
 
 ## Sports
 I love swimming very much. And I like badminton and basketball as well.

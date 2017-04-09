@@ -16,7 +16,7 @@
     },
     {
         "name":"URLMonitor",
-        "url":"http://datazhiyuan.com:60000/",
+        "url":"https://github.com/lxw0109/monitorURLs",
         "desc":"a tool detecting the updates on some websites"
     }
 ]

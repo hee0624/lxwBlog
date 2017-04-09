@@ -1,0 +1,22 @@
+[
+    {
+        "name":"PDFTable2Data",
+        "url":"http://datazhiyuan.com:60000/",
+        "desc":"an API extracting table data from PDF docs"
+    },
+    {
+       "name":"嗅金牛",
+       "url":"http://xiujinniu.com/xiujinniu/index.php",
+       "desc":"一款金融大数据产品，专注于金融数据，为客户提供数据产品及增值服务"
+    },
+    {
+       "name":"数知源",
+       "url":"http://datazhiyuan.com/datazhiyuan/index.php",
+       "desc":"一个数据收集、数据检索平台"
+    },
+    {
+        "name":"URLMonitor",
+        "url":"http://datazhiyuan.com:60000/",
+        "desc":"a tool detecting the updates on some websites"
+    }
+]

@@ -22,16 +22,16 @@
         <% } %>
         <% if (theme.customize.favicon.android) { %>
           <% if (theme.customize.gravatar.email && theme.customize.favicon.android.gravatar) { %>
-            <link rel="icon" type="image/png" href="<%= gravatar(theme.customize.gravatar.email, 192) %>" sizes="192x192">
+            <link rel="shortcut icon" href="<%= gravatar(theme.customize.gravatar.email, 16) %>">
           <% } else { %>
-            <link rel="icon" type="image/png" href="<%= url_for(theme.customize.favicon.android.url) %>" sizes="192x192">
+            <link rel="shortcut icon" href="<%= url_for(theme.customize.favicon.desktop.url) %>">
           <% } %>
         <% } %>
         <% if (theme.customize.favicon.apple) { %>
           <% if (theme.customize.gravatar.email && theme.customize.favicon.apple.gravatar) { %>
-            <link rel="apple-touch-icon" sizes="180x180" href="<%= gravatar(theme.customize.gravatar.email, 180) %>">
+            <link rel="shortcut icon" href="<%= gravatar(theme.customize.gravatar.email, 16) %>">
           <% } else { %>
-            <link rel="apple-touch-icon" sizes="180x180" href="<%= url_for(theme.customize.favicon.apple.url) %>">
+            <link rel="shortcut icon" href="<%= url_for(theme.customize.favicon.desktop.url) %>">
           <% } %>
         <% } %>
     <% } %>

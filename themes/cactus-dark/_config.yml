@@ -1,9 +1,9 @@
 nav:
   Home: /
-  AboutMe: /about/
-  Blog: /archives/
-  Categories: /categories/
-  Tags: /tags/
+  Articles: /archives/
+  #Categories: /categories/
+  #Tags: /tags/
+  About: /about/
 
 projects_url: http://github.com/lxw0109
 
@@ -31,7 +31,7 @@ customize:
         github: http://github.com/lxw0109
         stack-overflow: http://stackoverflow.com/users/3374961/lxw
         weibo: http://weibo.com/xiaopeien
-        envelope: mailto:liu_xiaowei@foxmail.com
+        #envelope: mailto:liu_xiaowei@foxmail.com
     post_count: 5
     highlight: rainbow
 
@@ -40,13 +40,14 @@ rss: false
 
 # Plugins
 plugins:
-    disqus_shortname: # Disqus Comments Shortname
-    google_analytics: UA-86660611-1 # enter the tracking ID for your Google Analytics
+    #disqus_shortname: disqus_bmaok2L2v6 # Disqus Comments Shortname
+    disqus_shortname: xiaoweiliu.disqus.com
+    #google_analytics: UA-86660611-1 # enter the tracking ID for your Google Analytics
 
 # Miscellaneous
 miscellaneous:
-    open_graph: # see http://ogp.me
-        fb_app_id:
-        fb_admins:
-        twitter_id:
-        google_plus:
+     open_graph: # see http://ogp.me
+         fb_app_id:
+         fb_admins:
+         twitter_id:
+         google_plus:

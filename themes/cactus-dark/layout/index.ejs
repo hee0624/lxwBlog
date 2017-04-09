@@ -17,18 +17,6 @@
   </p>
 </section>
 
-<section id="writing">
-  <span class="h1"><a href="<%- url_for("archives") %>">Writing</a></span>
-  <ul class="post-list">
-    <% site.posts.sort('date', 'desc').limit(theme.customize.post_count || 5).each(function(post, i){ %>
-      <li class="post-item">
-        <%- partial('_partial/post/date', { post: post, class_name: 'meta' }) %>
-        <span><%- partial('_partial/post/title', { post: post, index: true, class_name: '' }) %></span>
-      </li>
-    <% }); %>
-  </ul>
-</section>
-
 <% if (site.data.projects) { %>
 <section id="projects">
   <!-- <span class="h1"><a href="<%- url_for(theme.projects_url) %>">Projects</a></span> -->
@@ -42,3 +30,22 @@
   </ul>
 </section>
 <% } %>
+
+<section id="writing">
+  <span class="h1"><a href="<%- url_for("archives") %>">Articles</a></span>
+  <ul class="post-list">
+    <% site.posts.sort('date', 'desc').limit(theme.customize.post_count || 5).each(function(post, i){ %>
+      <li class="post-item">
+        <%- partial('_partial/post/date', { post: post, class_name: 'meta' }) %>
+        <span><%- partial('_partial/post/title', { post: post, index: true, class_name: '' }) %></span>
+      </li>
+    <% }); %>
+  </ul>
+</section>
+
+<section id="tags">
+    <span class="h1">Tags</span>
+    <div class="article-tag">
+        <%- list_tags({ show_count: false, style: 'link' }) %>
+    </div>
+</section>

@@ -41,7 +41,7 @@ rss: false
 # Plugins
 plugins:
     #disqus_shortname: disqus_bmaok2L2v6 # Disqus Comments Shortname
-    disqus_shortname: xiaoweiliu.disqus.com
+    disqus_shortname:
     #google_analytics: UA-86660611-1 # enter the tracking ID for your Google Analytics
 
 # Miscellaneous

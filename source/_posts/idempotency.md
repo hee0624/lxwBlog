@@ -12,7 +12,7 @@ categories: Network
 
 ### HTTP的幂等性
 GET, DELETE, PUT是满足幂等性的, POST是不满足幂等性的
-POST和PUT的区别: POST和PUT都可以用于创建资源, 多次POST会创建多个资源, 但多次PUT不会创建多个资源, 只会创建一个资源, 后面的PUT请求视为对所创建资源的更新操作
+POST和PUT的区别: POST和PUT都可以用于创建资源, 多次POST会创建多个资源, 但多次PUT不会创建多个资源, 只会创建一个资源, 后面的PUT请求视为对所创建资源的更新操作.
 
 ### Reference
 [理解HTTP幂等性](http://www.cnblogs.com/weidagang2046/archive/2011/06/04/2063696.html)   

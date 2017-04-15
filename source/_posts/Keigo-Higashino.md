@@ -2,6 +2,7 @@
 title: Reading List on Keigo Higashino's Novels
 date: 2016-08-08 18:18:18
 tags: Keigo Higashino
+categories: Keigo Higashino
 ---
 [东野圭吾](https://en.wikipedia.org/wiki/Keigo_Higashino)的小说实在是让人废寝忘食、欲罢不能。
 

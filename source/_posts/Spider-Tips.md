@@ -1,7 +1,8 @@
 ---
 title: Spider Tips
 date: 2017-04-10 15:07:05
-tags: [Spider, Python]
+tags: [Python, Spider]
+categories: [Python, Spider]
 ---
 
 1. 检查CSS匹配哪些标签，有两种方法：

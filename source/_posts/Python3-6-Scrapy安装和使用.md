@@ -13,7 +13,7 @@ categories: [Python, Spider, Scrapy]
 **Python Version**: 3.6.1
 
 ### 安装
-1.直接按照[Scrapy的安装文档][Installation guide]进行安装，并运行quotesSpider.py程序后，出现了下面的错误信息：
+1.直接按照[Scrapy的安装文档][Installation guide](`pip install Scrapy`)进行安装，并运行quotesSpider.py程序后，出现了下面的错误信息：
 ```bash
 Could not find a version that satisfies the requirement Twisted>=13.1.0 (from scrapy) (from versions: )
 No matching distribution found for Twisted>=13.1.0 (from scrapy)

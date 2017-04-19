@@ -32,7 +32,7 @@ customize:
         stack-overflow: http://stackoverflow.com/users/3374961/lxw
         weibo: http://weibo.com/xiaopeien
         #envelope: mailto:liu_xiaowei@foxmail.com
-    post_count: 5
+    post_count: 10
     highlight: rainbow
 
 # RSS

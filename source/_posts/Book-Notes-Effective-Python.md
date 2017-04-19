@@ -1,6 +1,6 @@
 ---
 title: 'Book Notes: Effective Python'
-date: 2017-04-18 21:51:43
+date: 2017-02-18 21:51:43
 tags: [Python, Reading]
 categories: [Python, Reading]
 ---

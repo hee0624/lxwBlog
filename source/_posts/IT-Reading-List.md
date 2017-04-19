@@ -17,6 +17,7 @@ categories: Reading
 
 
 在读：
+
 | 书名 | 总页数 | 豆瓣评分 |
 | :--- | :---: | :---: |
 | [Effective Python：编写高质量Python代码的59个有效方法](https://book.douban.com/subject/26709315/) | 210 | 8.8 |

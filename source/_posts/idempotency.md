@@ -1,6 +1,6 @@
 ---
 title: 幂等性
-date: 2017-04-12 18:18:18
+date: 2016-12-10 18:18:18
 tags: Network
 categories: Network
 ---

@@ -21,6 +21,17 @@ categories: [Python, Scrapy, Spider]
 ### FAQs
 1.[scrapy爬虫防止被禁止User-Agent切换](http://blog.csdn.net/haipengdai/article/details/48545231)
 2.[Python下用Scrapy和MongoDB构建爬虫系统(1)](http://python.jobbole.com/81320/)
+3.
+`Spider` - a browser like program that downloads web pages.
+`Crawler` – a program that automatically follows all of the links on each web page.
+Robots - An automated computer program that visit websites & perform predefined task.
+
+`Crawler(scrapy.crawler)` is the main entry point to Scrapy API. It provides access to all Scrapy core components, and it's used to hook extensions functionality into Scrapy.
+`Scraper(scrapy.core.scraper)` component is responsible for parsing responses and extracting information from them. It's being run from the Engine, and it's used to run your spiders.
+`scrapy.spiders` is a module containing base Spider implementation (that you use to write your spiders), together with some common spiders available out of the box (like the CrawlSpider for ruleset-based crawling, the SitemapSpider for sitemap based crawling, or XMLFeedSpider for crawling the XML feeds).
+
+[what is difference between spider, crawler and robots?](http://www.webdeveloper.com/forum/showthread.php?278773-what-is-difference-between-spider-crawler-and-robots)
+[Difference between scraper, crawler and spider in the context of Scrapy](http://stackoverflow.com/questions/34260886/difference-between-scraper-crawler-and-spider-in-the-context-of-scrapy)
 
 
 <!--References-->

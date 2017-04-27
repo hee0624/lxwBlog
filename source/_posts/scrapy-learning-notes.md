@@ -21,7 +21,7 @@ categories: [Python, Scrapy, Spider]
 ### FAQs
 1.[scrapy爬虫防止被禁止User-Agent切换](http://blog.csdn.net/haipengdai/article/details/48545231)
 2.[Python下用Scrapy和MongoDB构建爬虫系统(1)](http://python.jobbole.com/81320/)
-3. [讲解Python的Scrapy爬虫框架使用代理进行采集的方法](http://www.jb51.net/article/79666.htm)
+3.[讲解Python的Scrapy爬虫框架使用代理进行采集的方法](http://www.jb51.net/article/79666.htm)
 4.
 `Spider` - a browser like program that downloads web pages.
 `Crawler` – a program that automatically follows all of the links on each web page.

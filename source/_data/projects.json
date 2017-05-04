@@ -1,5 +1,15 @@
 [
     {
+        "name":"IPProxyAPI",
+        "url":"http://datazhiyuan.com:60001/",
+        "desc":"an API providing free IP proxies"
+    },
+    {
+        "name":"FintechSpider",
+        "url":"https://github.com/hee0624/fintech_spider",
+        "desc":"a spider crawling financial data(Scrapy)"
+    },
+    {
         "name":"PDFTable2Data",
         "url":"http://datazhiyuan.com:60000/",
         "desc":"an API extracting table data from PDF docs"

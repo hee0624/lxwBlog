@@ -68,6 +68,7 @@ pagination_dir: page
 #theme: hexadillax
 #theme: tranquilpeak    #complicated
 theme: cactus-dark
+#theme: cactus-light
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

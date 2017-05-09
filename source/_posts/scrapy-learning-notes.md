@@ -18,6 +18,9 @@ categories: [Python, Scrapy, Spider]
 > Another interesting thing this spider demonstrates is that, even if there are many quotes from the same author, we don’t need to worry about visiting the same author page multiple times. **By default, Scrapy filters out duplicated requests to URLs already visited, avoiding the problem of hitting servers too much because of a programming mistake. This can be configured by the setting DUPEFILTER_CLASS.**
 [Scrapy Tutorial-More examples and patterns](https://docs.scrapy.org/en/latest/intro/tutorial.html#more-examples-and-patterns)
 
+4.使用Selenium(PhantomJS/Chrome)进行数据爬取时，如果使用User-Agent池，那么User-Agent Middleware的优先级必须要比Selenium的优先级高，否则User-Agent无法加到Selenium的请求中
+[fintech_spider/demo/PhantomJSTests/PhantomJSScrapy/PhantomJSScrapy/settings.py](https://github.com/hee0624/fintech_spider/blob/master/demo/PhantomJSTests/PhantomJSScrapy/PhantomJSScrapy/settings.py)
+
 ### FAQs
 1.[scrapy爬虫防止被禁止User-Agent切换](http://blog.csdn.net/haipengdai/article/details/48545231)
 2.[Python下用Scrapy和MongoDB构建爬虫系统(1)](http://python.jobbole.com/81320/)
@@ -33,6 +36,7 @@ Robots - An automated computer program that visit websites & perform predefined 
 
 [what is difference between spider, crawler and robots?](http://www.webdeveloper.com/forum/showthread.php?278773-what-is-difference-between-spider-crawler-and-robots)
 [Difference between scraper, crawler and spider in the context of Scrapy](http://stackoverflow.com/questions/34260886/difference-between-scraper-crawler-and-spider-in-the-context-of-scrapy)
+
 
 
 <!--References-->

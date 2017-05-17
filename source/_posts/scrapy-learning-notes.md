@@ -21,6 +21,10 @@ categories: [Python, Scrapy, Spider]
 4.使用Selenium(PhantomJS/Chrome)进行数据爬取时，如果使用User-Agent池，那么User-Agent Middleware的优先级必须要比Selenium的优先级高，否则User-Agent无法加到Selenium的请求中
 [fintech_spider/demo/PhantomJSTests/PhantomJSScrapy/PhantomJSScrapy/settings.py](https://github.com/hee0624/fintech_spider/blob/master/demo/PhantomJSTests/PhantomJSScrapy/PhantomJSScrapy/settings.py)
 
+5.
++ yield重复的GET请求，Scrapy会将其自动过滤掉
++ yield重复的POST请求(完全相同的POST请求:URL和参数都相同)也会被Scrapy自动过滤掉; 不同的POST body不会被Scrapy过滤掉
+
 ### FAQs
 1.[scrapy爬虫防止被禁止User-Agent切换](http://blog.csdn.net/haipengdai/article/details/48545231)
 2.[Python下用Scrapy和MongoDB构建爬虫系统(1)](http://python.jobbole.com/81320/)

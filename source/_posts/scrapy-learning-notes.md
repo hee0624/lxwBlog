@@ -38,6 +38,9 @@ html = response.xpath("/html/body")
 tr = html.xpath(".//tr") #搜索body下的所有tr必须加上'.', 否则搜索的是整个文档的所有tr
 ```
 
+7.scrapy shell url  
+注意利用view(response)在浏览器中观察爬虫看到的网页是否和我们看到的网页一样，其实大部分都是不相同的。  
+
 ### FAQs
 1.[scrapy爬虫防止被禁止User-Agent切换](http://blog.csdn.net/haipengdai/article/details/48545231)
 2.[Python下用Scrapy和MongoDB构建爬虫系统(1)](http://python.jobbole.com/81320/)

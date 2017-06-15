@@ -25,6 +25,19 @@ categories: [Python, Scrapy, Spider]
 + yield重复的GET请求，Scrapy会将其自动过滤掉
 + yield重复的POST请求(完全相同的POST请求:URL和参数都相同)也会被Scrapy自动过滤掉; 不同的POST body不会被Scrapy过滤掉
 
+6.
+1).XPath解析：  
+html网页源文件中各个标签的id属性必须是唯一的（但对于不规范的网页来说，id相同也是有可能的）  
+class通常都是不唯一的，如果要用class需要在源代码中检索一下  
+所以使用XPath进行定位时，一般先定位到一个离目标标签最近的具有id属性的父级标签(包括但不局限于div标签)然后再通过该标签定位到目标标签  
+2).可以把“右键->查看网页源代码”的源代码拷贝到sublime或者pycharm，就可以折叠代码了  
+3).[注意事项][Scrapy使用以及Xpath的一些坑, 再入剁手]  
+如果在某个xpath对象下继续使用xpath规则提取, 当提取某个对象下的所有tr标签.
+```python
+html = response.xpath("/html/body")
+tr = html.xpath(".//tr") #搜索body下的所有tr必须加上'.', 否则搜索的是整个文档的所有tr
+```
+
 ### FAQs
 1.[scrapy爬虫防止被禁止User-Agent切换](http://blog.csdn.net/haipengdai/article/details/48545231)
 2.[Python下用Scrapy和MongoDB构建爬虫系统(1)](http://python.jobbole.com/81320/)
@@ -45,3 +58,4 @@ Robots - An automated computer program that visit websites & perform predefined 
 
 <!--References-->
 [Scrapy Tutorial]: https://docs.scrapy.org/en/latest/intro/tutorial.html
+[Scrapy使用以及Xpath的一些坑, 再入剁手]: http://www.cnblogs.com/Bright-Star/p/4163107.html?utm_source=tuicool&utm_medium=referral

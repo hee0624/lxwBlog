@@ -41,6 +41,27 @@ tr = html.xpath(".//tr") #搜索body下的所有tr必须加上'.', 否则搜索�
 7.scrapy shell url  
 注意利用view(response)在浏览器中观察爬虫看到的网页是否和我们看到的网页一样，其实大部分都是不相同的。  
 
+8.CSS selector:  
+
+|表达式|说明|
+|---|---|
+|*|选择所有节点|
+|#container|选择id为container的节点|
+|.container|选择所有class**包含**container的节点|
+|li a|选取所有li下的所有a节点(li和a是父子节点)|
+|ul + p|选取ul后面的第一个p节点(ul和p是兄弟节点)|
+|div#container > ul|选取id为container的div节点下的**第一个**ul子节点|
+|ul ~ p|选取与ul相邻的所有p节点|
+|a[title]|选取所有有title属性的a节点|
+|a[href="http://jobbole.com"]|选取所有href属性值为"http://jobbole.com"的a节点|
+|a[href*="jobbole"]|选取所有href属性值包含"jobbole"的a节点|
+|a[href^="http"]|选取所有href属性值以"http"开头的a节点|
+|a[href$=".jpg"]|选取所有href属性值以".jpg"结尾的a节点|
+|input[type=radio]:checked|选取状态为选中的radio节点|
+|div:not(#container)|选取所有id不为container的div节点|
+|li:nth-child(3)|选取第三个li节点|
+|tr:nth-child(2n)|选取第偶数个tr|
+
 ### FAQs
 1.[scrapy爬虫防止被禁止User-Agent切换](http://blog.csdn.net/haipengdai/article/details/48545231)
 2.[Python下用Scrapy和MongoDB构建爬虫系统(1)](http://python.jobbole.com/81320/)

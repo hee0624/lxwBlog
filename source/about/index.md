@@ -18,3 +18,5 @@ I love swimming very much. And I like badminton and basketball as well.
 Besides technical books, I love reading detective novels, especially those written by [Keigo Higashino](https://en.wikipedia.org/wiki/Keigo_Higashino). You can find my reading list [here](http://xiaoweiliu.cn/2016/08/08/Keigo-Higashino/).
 
 BTW, my original blog is on [cnblogs](http://www.cnblogs.com/lxw0109).
+
+<iframe src="https://lxw0109.github.io/donate-page/simple/" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no"></iframe>

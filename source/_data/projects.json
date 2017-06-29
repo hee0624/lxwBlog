@@ -1,10 +1,5 @@
 [
     {
-        "name":"IPProxyAPI",
-        "url":"http://datazhiyuan.com:60001/",
-        "desc":"an API providing free IP proxies"
-    },
-    {
         "name":"FintechSpider",
         "url":"https://github.com/hee0624/fintech_spider",
         "desc":"a spider crawling financial data(Scrapy)"
@@ -18,11 +13,6 @@
        "name":"嗅金牛",
        "url":"http://xiujinniu.com/xiujinniu/index.php",
        "desc":"一款金融大数据产品，专注于金融数据，为客户提供数据产品及增值服务"
-    },
-    {
-       "name":"数知源",
-       "url":"http://datazhiyuan.com/datazhiyuan/index.php",
-       "desc":"一个数据收集、数据检索平台"
     },
     {
         "name":"URLMonitor",

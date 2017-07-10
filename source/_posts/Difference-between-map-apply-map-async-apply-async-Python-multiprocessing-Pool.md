@@ -17,7 +17,7 @@ categories: [multiprocessing, Python]
 
 对4种方法分别进行了下面的测试，测试代码如下：
 
-```pyhon
+```python
 import multiprocessing
 # import sys
 import time

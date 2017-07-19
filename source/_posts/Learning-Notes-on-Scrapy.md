@@ -1,5 +1,5 @@
 ---
-title: scrapy learning notes
+title: Learning Notes on Scrapy
 date: 2017-04-12 16:22:30
 tags: [Python, Scrapy, Spider]
 categories: [Python, Scrapy, Spider]

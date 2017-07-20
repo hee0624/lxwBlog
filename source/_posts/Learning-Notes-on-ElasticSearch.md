@@ -5,19 +5,17 @@ tags: ElasticSearch
 categories: ElasticSearch
 ---
 ## "ELK Stack深入浅出视频"总结
-1. [01] 11'43"
-索引的名字必须是小写
-2. ![](./mysql_vs_ES.png)
-3. Solr支持的文本格式比ES多, 但ES的实时搜索比Solr好
-4. mapping映射: 创建索引时,可以预先定义字段的**类型**以及**相关属性**
-5. [11] 19'52"
+1. ![](./mysql_vs_ES.png)
+2. Solr支持的文本格式比ES多, 但ES的实时搜索比Solr好
+3. mapping映射: 创建索引时,可以预先定义字段的**类型**以及**相关属性**
+4. [11] 19'52"
 尽可能使用filter查询（减少使用基本查询），能够大大提高查询的性能
 ElasticSearch在执行带有filter的查询时，会打开索引的每个segment文件（Lucene底层文件），然后判断各文档是否符合filter要求。
 注意：
  + 1).旧的segment文件不会变，新来的数据会产生新的segment文件。
  + 2).Scriptfilters, Geo-filters, Date ranges这样的过滤方式开启cache无意义； exists, missing, range, term, terms查询默认是开启cache的。
 
-6. must: 条件必须满足，相当于and
+5. must: 条件必须满足，相当于and
    should: 条件可以满足也可以不满足，相当于or
    must_not: 条件不需要满足， 相当于not
 
@@ -61,7 +59,63 @@ GET /es_demo/employee/_search
   }
 }
 ```
-5. 
+5. 实际上，在 Elasticsearch 中，数据是被存储和索引在 分片 中，而一个索引仅仅是逻辑上的命名空间， 这个命名空间由一个或者多个分片组合在一起。 然而，这是一个内部细节，应用程序无需关心分片，对于应用程序而言，只需知道文档位于一个 索引 内。 Elasticsearch 会处理所有的细节。
+6. **索引(index)的名字必须是小写，不能以下划线开头，不能包含逗号**
+**类型(type)命名可以是大写或者小写，但是不能以下划线或者句号开头，不应该包含逗号，并且长度限制为256个字符**
+7. 创建index和type, 并插入新的元素：
+```json
+PUT /website/blog/123/_create
+{
+  "title": "My first blog entry",
+  "text":  "Just trying this out...",
+  "date":  "2014/01/01"
+}
+```
+`_create`可以起到检查的作用:只有_index 、 _type 和 _id 不存在时才接受该索引请求。如果创建新文档的请求成功执行，Elasticsearch 会返回元数据和一个 201 Created 的 HTTP 响应码。如果具有相同的 _index 、 _type 和 _id 的文档已经存在，Elasticsearch 将会返回 409 Conflict 响应码。  
+如果数据没有指定的 ID， Elasticsearch 可以帮我们自动生成 ID 。 请求的结构调整为： 不再使用 PUT 谓词("使用这个 URL 存储这个文档")， 而是使用 POST 谓词("存储文档在这个 URL 命名空间下")。
+```json
+POST /website/blog/
+{
+  "title": "My second blog entry",
+  "text":  "Still trying this out...",
+  "date":  "2014/01/02"
+}
+```
+8. 在 Elasticsearch 中文档是 不可改变 的，不能修改它们。 相反，如果想要更新现有的文档，需要 重建索引 或者进行替换
+假设某个文档中有三个字段，在更新（PUT）时只指定了两个字段，那么这个文档将会只有两个字段（替换，而无法修改）
+9. 删除文档不会立即将文档从磁盘中删除，只是将文档标记为已删除状态。随着你不断的索引更多的数据，Elasticsearch 将会在后台清理标记为已删除的文档。
+10. [乐观并发控制](https://www.elastic.co/guide/cn/elasticsearch/guide/current/optimistic-concurrency-control.html)要更新的文档的`_version`必须与URL中的version一致(相等)
+所有文档的更新或删除 API，都可以接受 version 参数，这允许你在代码中使用乐观的并发控制，这是一种明智的做法。
+```json
+PUT /website/blog/123?version=5
+{
+  "title": "My 1st blog entry",
+  "text": "Content of my 1st blog",
+  "date":  "2014/01/01"
+}
+```
+11. [通过外部系统使用版本控制](https://www.elastic.co/guide/cn/elasticsearch/guide/current/optimistic-concurrency-control.html#_Using_Versions_from_an_External_System)要更新的文档的`_version`必须**小于(相等不行)**URL中的version
+```json
+PUT /website/blog/123?version=8&version_type=external
+{
+  "title": "My 1st blog entry",
+  "text": "Content of my 1st blog",
+  "date":  "2014/01/01"
+}
+```
+12. [文档的部分更新](https://www.elastic.co/guide/cn/elasticsearch/guide/current/partial-updates.html#partial-updates): update 请求最简单的一种形式是接收文档的一部分作为 doc 的参数， 它只是与现有的文档进行合并。对象被合并到一起，覆盖现有的字段，增加新的字段。 例如，增加字段 tags 和 views 到我们的博客文章，如下所示：
+```json
+POST /website/blog/123/_update
+{
+   "doc" : {
+      "tags" : [ "testing" ],
+      "views": 0
+   }
+}
+```
+**必须是`POST`不能是`PUT`**
+13. 
+
 
 ## FAQs
 1. [Elasticsearch5.0 安装问题集锦](http://www.cnblogs.com/sloveling/p/elasticsearch.html)

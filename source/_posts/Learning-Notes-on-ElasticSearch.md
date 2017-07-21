@@ -37,18 +37,17 @@ PUT /es_demo/employee/1
     "interests": [ "sports", "music" ]
 }
 ```
-路径 /es_demo/employee/1 包含了三部分的信息：
-es_demo: 索引名称
-emp	loyee: 类型名称
-1: 特定雇员的ID
-
+ 路径 /es_demo/employee/1 包含了三部分的信息：
+ es_demo: 索引名称
+ emp	loyee: 类型名称
+ 1: 特定雇员的ID
 4. 有两种形式的 搜索 API：一种是"轻量的"**查询字符串** 版本，要求在查询字符串中传递所有的 参数，另一种是更完整的 **请求体** 版本，要求使用 JSON 格式和更丰富的查询表达式作为搜索语言。
 查询字符串版本优点就是简洁，但可读性差（url编码后），并且这种精简让调试更加晦涩和困难。而且很脆弱，一些查询字符串中很小的语法错误，像 -，:，/或者" 不匹配等，将会返回错误而不是搜索结果。查询字符串搜索允许任何用户在索引的任意字段上执行可能较慢且重量级的查询，这可能会暴露隐私信息，甚至将集群拖垮。**因为这些原因，不推荐直接向用户暴露查询字符串搜索功能，除非对于集群和数据来说非常信任他们。**在生产环境中更多地使用功能全面的请求体版本查询API，除了能完成以上所有功能，还有一些附加功能。
 [轻量搜索](https://www.elastic.co/guide/cn/elasticsearch/guide/current/search-lite.html) GET all employees whose last_name **is** "Smith"(精确匹配)
 ```json
 GET /es_demo/employee/_search?q=last_name:Smith
 ```
-领域特定语言（DSL），指定了使用一个 JSON 请求。可以像如下代码重写上述查询：
+ 领域特定语言（DSL），指定了使用一个 JSON 请求。可以像如下代码重写上述查询：
 ```json
 GET /es_demo/employee/_search
 {
@@ -71,7 +70,7 @@ PUT /website/blog/123/_create
   "date":  "2014/01/01"
 }
 ```
-`_create`可以起到检查的作用:只有_index 、 _type 和 _id 不存在时才接受该索引请求。如果创建新文档的请求成功执行，Elasticsearch 会返回元数据和一个 201 Created 的 HTTP 响应码。如果具有相同的 _index 、 _type 和 _id 的文档已经存在，Elasticsearch 将会返回 409 Conflict 响应码。  
+ `_create`可以起到检查的作用:只有_index 、 _type 和 _id 不存在时才接受该索引请求。如果创建新文档的请求成功执行，Elasticsearch 会返回元数据和一个 201 Created 的 HTTP 响应码。如果具有相同的 _index 、 _type 和 _id 的文档已经存在，Elasticsearch 将会返回 409 Conflict 响应码。  
 如果数据没有指定的 ID， Elasticsearch 可以帮我们自动生成 ID 。 请求的结构调整为： 不再使用 PUT 谓词("使用这个 URL 存储这个文档")， 而是使用 POST 谓词("存储文档在这个 URL 命名空间下")。
 ```json
 POST /website/blog/
@@ -113,9 +112,74 @@ POST /website/blog/123/_update
    }
 }
 ```
-**必须是`POST`不能是`PUT`**
-13. 
-
+ **必须是`POST`不能是`PUT`**
+13. 如果需要从 Elasticsearch 检索很多文档，那么使用 multi-get 或者 mget API 来将这些检索请求放在一个请求中，将比逐个文档请求更快地检索到全部文档。  
+mget API 要求有一个 docs 数组作为参数，每个 元素包含需要检索文档的元数据， 包括 _index 、 _type 和 _id 。如果你想检索一个或者多个特定的字段，那么你可以通过 _source 参数来指定这些字段的名字：
+```json
+GET /_mget
+{
+   "docs" : [
+      {
+         "_index" : "website",
+         "_type" :  "blog",
+         "_id" :    123
+      },
+      {
+         "_index" : "website",
+         "_type" :  "pageviews",
+         "_id" :    1,
+         "_source": ["title", "url"]
+      }
+   ]
+}
+```
+等价于下面的代码：
+```json
+GET /website/_mget
+{
+   "docs" : [
+      {
+         "_type" :  "blog",
+         "_id" :    123
+      },
+      {
+         "_type" :  "pageviews",
+         "_id" :    1,
+         "_source": ["title", "url"]
+      }
+   ]
+}
+```
+ 即使有某个文档没有找到，上述请求的 HTTP 状态码仍然是 200 。事实上，即使请求 没有 找到任何文档，它的状态码依然是 200 --因为 mget 请求本身已经成功执行。 为了确定某个文档查找是成功或者失败，你需要检查 found 标记。
+14. 批量查询用_mget， 批量增删改用_bulk: mget 可以一次取回多个文档， bulk API 允许在单个步骤中进行多次 create 、 index 、 update 或 delete 请求。
+```json
+# OK
+POST /website/pageviews/_bulk
+{ "index": {"_id": 1}}
+{ "title": "Xiaowei Liu's Blog.", "url": "xiaoweiliu.cn"}
+{ "index": { "_type": "blog", "_id": "123"}}
+{ "title": "Overriding: My 1st blog title", "text": "Overriding: Content of 1st blog", "date": "2014/01/03" }
+```
+注意第五行，请求体中必须用**一行**包含所有要更新的数据，**不能分到多行中**。例如下面的代码是错误的
+```json
+# NO
+POST /website/pageviews/_bulk
+{ "index": {"_id": 1}}
+{ "title": "Xiaowei Liu's Blog.", "url": "xiaoweiliu.cn"}
+{ "index": { "_type": "blog", "_id": "123"}}
+{ "title": "Overriding: My 1st blog title"}
+{ "text": "Overriding: Content of 1st blog" }
+{ "date": "2014/01/03" }
+```
+15. 删除某个type中的所有数据
+```json
+POST /industry_chain/nodes/_delete_by_query
+{
+  "query": {
+    "match_all": {}
+  }
+}
+```
 
 ## FAQs
 1. [Elasticsearch5.0 安装问题集锦](http://www.cnblogs.com/sloveling/p/elasticsearch.html)

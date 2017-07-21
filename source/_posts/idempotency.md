@@ -14,6 +14,17 @@ categories: Network
 GET, DELETE, PUT是满足幂等性的, POST是不满足幂等性的
 POST和PUT的区别: POST和PUT都可以用于创建资源, 多次POST会创建多个资源, 但多次PUT不会创建多个资源, 只会创建一个资源, 后面的PUT请求视为对所创建资源的更新操作.
 
+常用的HTTP动词有下面五个（括号里是对应的SQL命令）:
+GET（SELECT）：从服务器取出资源（一项或多项）
+POST（CREATE）：在服务器新建一个资源（也可以用于更新资源）
+PUT（UPDATE）：在服务器更新资源（客户端提供改变后的完整资源）
+PATCH（UPDATE）：在服务器更新资源（客户端提供改变的属性）
+DELETE（DELETE）：从服务器删除资源
+还有两个不常用的HTTP动词:
+HEAD：获取资源的元数据
+OPTIONS：获取信息，关于资源的哪些属性是客户端可以改变的
+
 ### Reference
 [理解HTTP幂等性](http://www.cnblogs.com/weidagang2046/archive/2011/06/04/2063696.html)   
 [基础篇(一) 幂等性](http://blog.csdn.net/tjgamejx2/article/details/51011425)
+[RESTful API 设计指南](http://www.ruanyifeng.com/blog/2014/05/restful_api.html)

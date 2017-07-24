@@ -180,6 +180,151 @@ POST /industry_chain/nodes/_delete_by_query
   }
 }
 ```
+16. 中文分词使用ik分词(ik_smart/ik_max_word)
+```bash
+curl -XGET 'http://192.168.1.8:9200/_analyze?pretty&analyzer=ik_smart' -d "中华人民共和国今天成立啦"
+{
+  "tokens" : [
+    {
+      "token" : "中华人民共和国",
+      "start_offset" : 0,
+      "end_offset" : 7,
+      "type" : "CN_WORD",
+      "position" : 0
+    },
+    {
+      "token" : "今天",
+      "start_offset" : 7,
+      "end_offset" : 9,
+      "type" : "CN_WORD",
+      "position" : 1
+    },
+    {
+      "token" : "成立",
+      "start_offset" : 9,
+      "end_offset" : 11,
+      "type" : "CN_WORD",
+      "position" : 2
+    },
+    {
+      "token" : "啦",
+      "start_offset" : 11,
+      "end_offset" : 12,
+      "type" : "CN_CHAR",
+      "position" : 3
+    }
+  ]
+}
+```
+```bash
+curl -XGET 'http://192.168.1.8:9200/_analyze?pretty&analyzer=ik_max_word' -d "中华人民共和国今天成立啦"
+{
+  "tokens" : [
+    {
+      "token" : "中华人民共和国",
+      "start_offset" : 0,
+      "end_offset" : 7,
+      "type" : "CN_WORD",
+      "position" : 0
+    },
+    {
+      "token" : "中华人民",
+      "start_offset" : 0,
+      "end_offset" : 4,
+      "type" : "CN_WORD",
+      "position" : 1
+    },
+    {
+      "token" : "中华",
+      "start_offset" : 0,
+      "end_offset" : 2,
+      "type" : "CN_WORD",
+      "position" : 2
+    },
+    {
+      "token" : "华人",
+      "start_offset" : 1,
+      "end_offset" : 3,
+      "type" : "CN_WORD",
+      "position" : 3
+    },
+    {
+      "token" : "人民共和国",
+      "start_offset" : 2,
+      "end_offset" : 7,
+      "type" : "CN_WORD",
+      "position" : 4
+    },
+    {
+      "token" : "人民",
+      "start_offset" : 2,
+      "end_offset" : 4,
+      "type" : "CN_WORD",
+      "position" : 5
+    },
+    {
+      "token" : "共和国",
+      "start_offset" : 4,
+      "end_offset" : 7,
+      "type" : "CN_WORD",
+
+      "position" : 6
+    },
+    {
+      "token" : "共和",
+      "start_offset" : 4,
+      "end_offset" : 6,
+      "type" : "CN_WORD",
+      "position" : 7
+    },
+    {
+      "token" : "国",
+      "start_offset" : 6,
+      "end_offset" : 7,
+      "type" : "CN_CHAR",
+      "position" : 8
+    },
+    {
+      "token" : "今天",
+      "start_offset" : 7,
+      "end_offset" : 9,
+      "type" : "CN_WORD",
+      "position" : 9
+    },
+    {
+      "token" : "天成",
+      "start_offset" : 8,
+      "end_offset" : 10,
+      "type" : "CN_WORD",
+      "position" : 10
+    },
+    {
+      "token" : "成立",
+      "start_offset" : 9,
+      "end_offset" : 11,
+      "type" : "CN_WORD",
+      "position" : 11
+    },
+    {
+      "token" : "啦",
+      "start_offset" : 11,
+      "end_offset" : 12,
+      "type" : "CN_CHAR",
+      "position" : 12
+    }
+  ]
+}
+```
+中文分词使用standard/english/chinese分词，每个字被分成单独的词
+```bash
+curl -XGET 'http://192.168.1.8:9200/_analyze?pretty&analyzer=standard' -d "中华人民共和国今天成立啦"
+curl -XGET 'http://192.168.1.8:9200/_analyze?pretty&analyzer=english' -d "中华人民共和国今天成立啦"
+curl -XGET 'http://192.168.1.8:9200/_analyze?pretty&analyzer=chinese' -d "中华人民共和国今天成立啦"
+```
+也可以直接通过浏览器进行测试:`http://192.168.1.8:9200/industry_chain/_analyze?pretty&text=中华人民共和国今天成立啦&analyzer=ik_smart`
+17. [`Fields` with the same name in different `mapping types` in the same `index` must have the same mapping.](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html#field-conflicts)
+18. 
+
 
 ## FAQs
 1. [Elasticsearch5.0 安装问题集锦](http://www.cnblogs.com/sloveling/p/elasticsearch.html)

@@ -89,8 +89,11 @@
   //当时鼠标位置存储，离开的时候，释放当前位置信息
   window.onmousemove = function(e) {
     e = e || window.event;
-    current_point.x = e.clientX;
-    current_point.y = e.clientY;
+    // current_point.x = e.clientX;
+    // current_point.y = e.clientY;
+    // lxw 20170723 不记录鼠标的位置，不聚集周围的蒲公英
+    current_point.x = null;
+    current_point.y = null;
   }, window.onmouseout = function() {
     current_point.x = null;
     current_point.y = null;

@@ -151,8 +151,94 @@ P14 下面
 [1, 2, 6, 4, 5]
 ```
 
-3.三个函数
+3.
+三个函数
 [`filter()`](http://www.cnblogs.com/Lambda721/p/6128424.html), [`map()`](http://www.cnblogs.com/Lambda721/p/6128351.html), [`reduce()`](http://www.cnblogs.com/Lambda721/p/6128384.html)
 `Python 3`已经将`reduce()`函数从全局命名空间里移除了，现在被放置在`functools`模块中(`from functools import reduce`)
 
 4.
+P40
+1).如果把迭代器对象(生成器对象也可以)传给内置的iter函数，那么iter函数会把该迭代器对象返回；  
+2).如果传给iter函数的是个容器类型的对象(list/set/dict/tuple)，那么iter函数每次都会返回**新的**迭代器对象  
+于是我们可以根据iter函数的这种行为来判断输入值是不是一个迭代器对象
+**1)的验证:**
+```python
+In [1]: def func():
+   ...:     for item in range(10):
+   ...:         yield item
+   ...:         
+
+In [2]: type(func)
+Out[2]: function
+
+In [3]: type(func())
+Out[3]: generator
+
+In [4]: iter(func()) is iter(func())
+Out[4]: False
+
+In [5]: iter(func()) is func()
+Out[5]: False
+
+In [6]: temp_func = func()
+
+In [7]: iter(temp_func) is temp_func
+Out[7]: True
+
+In [8]: iter(temp_func) is iter(temp_func)
+Out[8]: True
+```
+注意`In/Out [4]&In/Out [5]`与`In/Out [7]&In/Out [8]`的区别，多次调用`func()`返回的是不同的生成器对象
+```python
+In [21]: a = func()
+
+In [22]: b = func()
+
+In [23]: a
+Out[23]: <generator object func at 0x7f02a6f56f10>
+
+In [24]: b
+Out[24]: <generator object func at 0x7f02a7ab1728>
+```
+**2)的验证:**
+```python
+In [25]: a_list = [1, 2, 3]
+
+In [26]: iter(a_list) is a_list
+Out[26]: False
+
+In [27]: iter(a_list) is iter(a_list)
+Out[27]: False
+```
+从`In/Out [27]`我们能够看出如果传给iter函数的是个容器类型的对象(list/set/dict/tuple)，那么iter函数每次都会返回**新的**迭代器对象  
+
+5.
+P42
+```python
+In [37]: def func(*args):
+    ...:     print(len(args))
+    ...:     print(type(args))
+    ...:     print(args)
+    ...:     
+
+In [38]: a_list
+Out[38]: [1, 2, 3]
+
+In [39]: func(a_list)
+1
+<class 'tuple'>
+([1, 2, 3],)
+
+In [40]: func(*a_list)
+3
+<class 'tuple'>
+(1, 2, 3)
+
+In [41]: *a_list
+  File "<ipython-input-41-8d6ae4d8d4b3>", line 1
+    *a_list
+           ^
+SyntaxError: can't use starred expression here
+```
+
+6.

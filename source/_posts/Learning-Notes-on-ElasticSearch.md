@@ -323,7 +323,9 @@ curl -XGET 'http://192.168.1.8:9200/_analyze?pretty&analyzer=chinese' -d "中华
 ```
 也可以直接通过浏览器进行测试:`http://192.168.1.8:9200/industry_chain/_analyze?pretty&text=中华人民共和国今天成立啦&analyzer=ik_smart`
 17. [`Fields` with the same name in different `mapping types` in the same `index` must have the same mapping.](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html#field-conflicts)
-18. 
+18. Updating existing mappings
+Other than where documented, existing type and field mappings cannot be updated. Changing the mapping would mean invalidating already indexed documents. Instead, you should create a new index with the correct mappings and reindex your data into that index.
+19. 
 
 
 ## FAQs

@@ -6,7 +6,7 @@
     },
     {
         "name":"PDFTable2Data",
-        "url":"http://datazhiyuan.com:60000/",
+        "url":"http://101.201.102.233:60000/",
         "desc":"an API extracting table data from PDF docs"
     },
     {

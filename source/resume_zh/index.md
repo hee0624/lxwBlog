@@ -31,16 +31,16 @@ tags:
 
 
 ### 专业技能
-- 熟悉Python, C++
-- 熟练使用Linux, 熟悉Shell脚本编程
-- 熟练使用Git, Vim, MongoDB, MySQL
+- 熟悉Python, 熟悉Shell脚本编程
+- 熟练使用Linux
+- 熟练使用Git, Vim, MongoDB, MySQL, Redis
 - 熟悉常用的算法和数据结构
 - 熟悉计算机网络, TCP/IP协议, 网络爬虫
 - 通过CET-6考试, 具备良好的听说读写译能力
 
 
 ### 项目经验
-* **嗅金牛金融信息查询平台&nbsp;&nbsp;2016.6~2017.2&nbsp;&nbsp;关键技术: PHP,Python,MySQL,LVS**
+* **嗅金牛金融信息查询平台&nbsp;&nbsp;2016.6~2017.2&nbsp;&nbsp;关键技术: PHP,Python,MySQL,Elasticsearch,LVS**
 **项目介绍**: 嗅金牛是一个基于NLP的上市公司知识图谱与事件驱动分析平台, 专注于金融数据, 为客户提供上市公司信息查询、数据产品及增值服务
 **本人工作**:
  - 将2800家国内A股上市公司的PDF年报文档进行解析, 基于`poppler`和`numpy`实现了表格区域识别算法、同一页内不同表格切割算法, 以及特殊表格的提取算法, 从而准确提取PDF文档中的关键表格数据(包括公司股东及董事高管、主营业务、投资关系、收入分布等信息), 并进行数据清洗和数据入库

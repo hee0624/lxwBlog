@@ -79,7 +79,7 @@ $ docker port angry_hodgkin    # 查看容器端口的映射情况
 参数说明:
 + -d:让容器在后台运行
 + -P:将容器内部使用的网络端口映射到我们使用的主机上
-+ -p : 是容器内部端口绑定到指定的主机端口。(`docker run -d -p 5000:5000 training/webapp python app.py`)
++ -p:是容器内部端口绑定到指定的主机端口。(`docker run -d -p 5000:5000 training/webapp python app.py`)
 
 Docker 开放了 5000 端口（默认 Python Flask 端口）映射到主机端口 32768 上, 这时我们可以通过浏览器访问WEB应用
 6.
@@ -119,7 +119,7 @@ $ docker rm angry_hodgkin
 angry_hodgkin
 $ docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-$
+$ docker rmi <image id>    # 删除images，通过image的id来指定删除谁
 ```
 9.使用 docker images 来列出本地主机上的镜像。
 ```bash
@@ -186,14 +186,14 @@ $ docker search httpd
  + 26c5edd45e9b：容器ID
 
  lxw/ubuntu1510:指定要创建的目标镜像名
- 
+
  **2)构建镜像**
  使用命令 docker build，从零开始来创建一个新的镜像。为此，我们需要创建一个 Dockerfile 文件，其中包含一组指令来告诉 Docker 如何构建镜像。
  ```bash
  $ cat Dockerfile
  FROM    centos:6.7
  MAINTAINER      Fisher "fisher@sudops.com"
- 
+
  RUN     /bin/echo 'root:lxw' |chpasswd
  RUN     useradd lxw
  RUN     /bin/echo 'lxw:lxw' |chpasswd

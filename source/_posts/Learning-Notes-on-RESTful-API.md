@@ -9,14 +9,14 @@ categories: [Architecture, RESTful API]
 REST -- REpresentational State Transfer  
 首先，之所以晦涩是因为前面主语被去掉了，全称是 Resource Representational State Transfer.  
 通俗来讲就是：资源在网络中以某种表现形式进行状态转移。分解开来：
-Resource：资源，即数据（前面说过网络的核心）。比如 newsfeed，friends等；  
+Resource：资源，即数据（可以认为是网络的核心）。比如 newsfeed，friends等；  
 Representational：某种表现形式，比如用JSON，XML，JPEG等；  
 State Transfer：状态变化(通过HTTP动词实现)。  
 REST的服务器是无状态的（stateless）
 
 ## RESTful API设计的Best Practice
 1. URI使用名词而不是动词，且推荐用复数  
-**BAD**: 
+**BAD**:
 /getProducts
 /listOrders
 /retrieveClientByOrder?orderId=1

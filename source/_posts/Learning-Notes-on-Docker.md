@@ -79,9 +79,9 @@ $ docker port angry_hodgkin    # 查看容器端口的映射情况
 参数说明:
 + -d:让容器在后台运行
 + -P:将容器内部使用的网络端口映射到我们使用的主机上
-+ -p:是容器内部端口绑定到指定的主机端口。(`docker run -d -p 5000:5000 training/webapp python app.py`)
++ -p:是容器内部端口绑定到指定的主机端口。(`docker run -d -p 80:8080 training/webapp python app.py`) 将Docker容器中的8080端口映射到主机端口80上
 
-Docker 开放了 5000 端口（默认 Python Flask 端口）映射到主机端口 32768 上, 这时我们可以通过浏览器访问WEB应用
+Docker开放了5000端口（默认Python Flask端口）映射到主机端口32768上, 这时我们可以通过浏览器访问WEB应用
 6.
 ```bash
 $ docker logs -f angry_hodgkin

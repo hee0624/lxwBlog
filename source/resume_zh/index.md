@@ -6,7 +6,7 @@ tags:
 # 刘晓伟 简历
 
 **通信地址:**北京市海淀区中关村南四街四号中科院软件园4号楼(100190)
-**性别:**男&nbsp;&nbsp;**Tel:**(+86)131-2672-6993&nbsp;&nbsp;**Email:**liu_xiaowei@foxmail.com
+**性别:**男&nbsp;&nbsp;&nbsp;&nbsp;**Tel:**(+86)131-2672-6993&nbsp;&nbsp;&nbsp;&nbsp;**Email:**liu_xiaowei@foxmail.com
 
 
 ### 教育经历
@@ -27,34 +27,34 @@ tags:
 
 
 ### 开源代码阅读
-[pdf-table-extract](https://github.com/ashima/pdf-table-extract),&nbsp;&nbsp;&nbsp;[threadpool-PyPI](https://github.com/SpotlightKid/threadpool)
+[pdf-table-extract](https://github.com/ashima/pdf-table-extract),&nbsp;&nbsp;&nbsp;&nbsp;[threadpool-PyPI](https://github.com/SpotlightKid/threadpool)
 
 
 ### 专业技能
 - 熟悉Python, 熟悉Shell脚本编程
-- 熟练使用Linux
-- 熟练使用Git, Vim, MongoDB, MySQL, Redis
+- 熟练使用Linux, Git, Vim
+- 熟练使用MongoDB, MySQL, Redis
 - 熟悉常用的算法和数据结构
 - 熟悉计算机网络, TCP/IP协议, 网络爬虫
 - 通过CET-6考试, 具备良好的听说读写译能力
 
 
 ### 项目经验
-* **嗅金牛金融信息查询平台&nbsp;&nbsp;2016.6~2017.2&nbsp;&nbsp;关键技术: PHP,Python,MySQL,Elasticsearch,LVS**
+* **嗅金牛金融信息查询平台&nbsp;&nbsp;2016.6~2017.2&nbsp;&nbsp;关键技术: PHP, Python, MySQL, Elasticsearch, LVS**
 **项目介绍**: 嗅金牛是一个基于NLP的上市公司知识图谱与事件驱动分析平台, 专注于金融数据, 为客户提供上市公司信息查询、数据产品及增值服务
 **本人工作**:
- - 将2800家国内A股上市公司的PDF年报文档进行解析, 基于`poppler`和`numpy`实现了表格区域识别算法、同一页内不同表格切割算法, 以及特殊表格的提取算法, 从而准确提取PDF文档中的关键表格数据(包括公司股东及董事高管、主营业务、投资关系、收入分布等信息), 并进行数据清洗和数据入库
+ - 将3000家国内A股上市公司的PDF年报文档进行解析, 基于`poppler`和`numpy`实现了表格区域识别算法、同一页内不同表格切割算法, 以及特殊表格的提取算法, 从而准确提取PDF文档中的关键表格数据(包括公司股东及董事高管、主营业务、投资关系、收入分布等信息), 并进行数据清洗和数据入库
  - 使用`ThinkPHP`框架完成网站的后台开发, 完成网站部署并实现负载均衡(`LVS`)
 
-* **网站自动化监测与警报系统&nbsp;&nbsp;&nbsp;2015.2~2015.5&nbsp;&nbsp;关键技术: Python,Shell,Xpath**
+* **网站自动化监测与警报系统&nbsp;&nbsp;&nbsp;2015.2~2015.5&nbsp;&nbsp;关键技术: Python, Shell, Xpath**
 **项目介绍**: 该系统自动、定期地爬取指定网站的首页内容, 计算网页内容的摘要数据(`MD5`)，通过比对相邻两次摘要数据判断网站内容是否更新. 当监测到网站访问异常或网站内容更新时, 自动发送邮件通知到指定的收件人. 该系统支持网站访问故障检测, 网页更新检测, 更新内容提取, 日志记录, 自动化邮件通知等功能
 **本人工作**: 该系统由本人独立开发完成
 
-* **局域网内UDP数据传输工具&nbsp;&nbsp;&nbsp;2014.3~2014.4&nbsp;&nbsp;&nbsp;关键技术: C#,WPF**
+* **局域网内UDP数据传输工具&nbsp;&nbsp;&nbsp;2014.3~2014.4&nbsp;&nbsp;&nbsp;关键技术: C#, WPF**
 **项目介绍**: 该工具自动扫描局域网内运行本软件的主机(包括PC端和Android端), 支持与扫描到的主机进行可靠的UDP文字通信和文件传输
 **本人工作**: 完成PC端的全部功能实现, 具体包括: PC端GUI开发(`WPF`), 扫描局域网内运行本软件的主机, 与扫描到的主机进行文字通信和文件传输, 采用序列号、确认报文和超时重传机制实现UDP的可靠数据传输, 并对传输的数据进行了加密处理
 
-* **虚拟数控车铣床仿真系统&nbsp;&nbsp;&nbsp;2012.10~2013.8&nbsp;&nbsp;&nbsp;关键技术: C#,XNA**
+* **虚拟数控车铣床仿真系统&nbsp;&nbsp;&nbsp;2012.10~2013.8&nbsp;&nbsp;&nbsp;关键技术: C#, XNA**
 **项目介绍**: 该项目是本人在吉林省SIMI科技有限公司实习时参与的项目, 项目由FANUC, HNC, SIEMENS三个车(铣)床仿真系统组成, 每个系统主要分为液晶显示(仿真)和程序解释(核心功能)两个模块
 **本人工作**: 负责液晶显示和程序解释两个模块的开发和优化，具体包括:
  - XNA模型绘制: 轨迹绘制, 模型旋转缩放, 二维显示等

@@ -32,13 +32,12 @@ $ sudo apt-get install libreadline6-dev    # 上下左右方向键无法使用
 $ sudo apt-get install openssl    # pip无法使用https源
 $ sudo apt-get install libssl-dev    # pip无法使用https源
 ```
-
 执行上述操作后，再统一重新编译安装`Python3.6.*`(每次编译安装的时间比较长)。
 ```bash
-$ sudo apt-get install openssl
-$ sudo apt-get install libssl-dev
+$ ./configure --enable-optimizations
+$ make
+$ sudo make install
 ```
-
 
 ### 示例代码(`quotesSpider.py`)
 解决上面的两个问题之后，就可以正确运行quotesSpider.py程序了，具体的源代码如下。

@@ -32,6 +32,7 @@ $ sudo apt-get install libreadline6-dev    # 上下左右方向键无法使用
 $ sudo apt-get install openssl    # pip无法使用https源
 $ sudo apt-get install libssl-dev    # pip无法使用https源
 ```
+
 执行上述操作后，再统一重新编译安装`Python3.6.*`(每次编译安装的时间比较长)。
 ```bash
 $ ./configure --enable-optimizations

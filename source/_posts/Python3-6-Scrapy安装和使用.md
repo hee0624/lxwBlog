@@ -26,7 +26,18 @@ ImportError: No module named _sqlite3
 ```
 经[网上](http://stackoverflow.com/questions/1210664/no-module-named-sqlite3)查阅，发现还是`Python3.6.*`的问题，需要先安装`libsqlite3-dev`(`sudo apt-get install libsqlite3-dev`)，然后重新编译安装`Python3.6.*`。
 
-应该可以在第1步和第2步都安装完成之后，再统一重新编译安装`Python3.6.*`(每次编译安装的时间比较长)。
+推荐一并安装下面的包：
+```bash
+$ sudo apt-get install libreadline6-dev    # 上下左右方向键无法使用
+$ sudo apt-get install openssl    # pip无法使用https源
+$ sudo apt-get install libssl-dev    # pip无法使用https源
+```
+执行上述操作后，再统一重新编译安装`Python3.6.*`(每次编译安装的时间比较长)。
+```bash
+$ ./configure --enable-optimizations
+$ make
+$ sudo make install
+```
 
 ### 示例代码(`quotesSpider.py`)
 解决上面的两个问题之后，就可以正确运行quotesSpider.py程序了，具体的源代码如下。

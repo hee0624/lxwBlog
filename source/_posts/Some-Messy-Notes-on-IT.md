@@ -27,3 +27,28 @@ ActiveMQ currently outperforms RabbitMQ for messaging usage in Python.
 + 信号(sinal): 信号是一种比较复杂的通信方式，用于通知接收进程某个事件已经发生。
 + 共享内存(shared memory): 共享内存就是映射一段能被其他进程所访问的内存，这段共享内存由一个进程创建，但多个进程都可以访问。**共享内存是最快的IPC方式，它是针对其他进程间通信方式运行效率低而专门设计的**。**它往往与其他通信机制(如信号量)配合使用，来实现进程间的同步和通信**。
 + 套接字(socket): 套解字也是一种进程间通信机制，与其他通信机制不同的是，它可用于不同机器间的进程通信。
+
+4.
+[CGI, FastCGI, WSGI, uWSGI, uwsgi简述](https://www.cnblogs.com/wswang/p/6044978.html)  
+**CGI**  
+通用网关接口（Common Gateway Interface/CGI）是一种重要的互联网技术，可以让一个客户端，从网页浏览器向执行在网络服务器上的程序请求数据。CGI描述了服务器和请求处理程序之间传输数据的一种标准。  
+CGI程序可以用任何脚本语言或者是完全独立编程语言实现，只要这个语言可以在这个系统上运行。  
+**一句话总结： 一个标准，定义了客户端服务器之间如何传数据**  
+
+**FastCGI**  
+快速通用网关接口（Fast Common Gateway Interface／FastCGI）是一种让交互程序与Web服务器通信的协议。FastCGI是早期通用网关接口（CGI）的增强版本。  
+FastCGI致力于减少网页服务器与CGI程序之间互动的开销，从而使服务器可以同时处理更多的网页请求。  
+使用FastCGI的服务器： Apache HTTP Server (部分), Cherokee HTTP Server, Hiawatha Webserver, Lighttpd, Nginx, LiteSpeed Web Server, Microsoft IIS  
+**一句话总结： CGI的升级版**  
+
+**WSGI**  
+Web服务器网关接口（Python Web Server Gateway Interface，缩写为WSGI）是为Python语言定义的Web服务器和Web应用程序或框架之间的一种简单而通用的接口。自从WSGI被开发出来以后，许多其它语言中也出现了类似接口。  
+**一句话总结： 为Python定义的web服务器和web框架之间的接口标准，如Apache和Django这种东西（虽然很少有人这么用）**  
+
+**uWSGI**  
+**一句话总结： 一个Web Server，即一个实现了WSGI的服务器，大体和Apache是一个类型的东西，处理发来的请求。**
+
+**uwsgi**  
+**一句话总结： uWSGI自有的一个协议**  
+
+这篇文章[CGI FastCGI WSGI 学习笔记](https://blog.callmewhy.com/2015/12/07/what-is-wsgi-and-cgi/)比较详细，比较清楚，推荐看。

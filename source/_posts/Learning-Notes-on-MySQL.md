@@ -47,33 +47,27 @@ ORDER BY clause
 ```
 除了`SELECT`子句的执行顺序存在差异外，其他的子句执行顺序相同。在[StackOverflow][MySQL Order of Operations?]上查阅到的结果与最上面的说法是一致的。个人也更倾向于最上面的说法。
 
-<!-- References -->
+<!-- 1. References -->
 [MySQL的语句执行顺序]: http://www.cnblogs.com/rollenholt/p/3776923.html
 [MySQL Order of Operations?]: http://stackoverflow.com/questions/4001183/mysql-order-of-operations
 
-### 2.聚集索引和非聚集索引
-聚集索引一个表只能有一个，而非聚集索引一个表可以存在多个  
-聚集索引存储记录是物理上连续的，而非聚集索引是逻辑上的连续，物理存储并不连续  
+### 3. MySQL Tips:
+1).在建立索引时，可能会因为数据量太大，导致索引建立的时间特别长；这时可以尝试重启mysqld服务，然后再建立索引，速度会快很多很多  
+2).
+```python
+sql = "SELECT DISTINCT news.id AS anon_1, news.public_time, news.news_type, news.theme_type, news.history_similarity " \
+              "FROM news FORCE INDEX (ix_news_public_time), relation_node_news " \
+              "WHERE  relation_node_news.news_id = news.id " \
+              "AND relation_node_news.node_type = %s " \
+              "AND date(news.public_time) >= '%s' AND date(news.public_time) < '%s' %s " \
+              "ORDER BY news.public_time DESC ;" % \
+              (NODE_TYPE, start_time, end_time, cases)
 
-在数据库中，聚集索引和非聚集索引是以二叉树的形式描述的：  
-聚集索引的叶节点就是最终的数据节点，而非聚集索引的叶节点仍然是索引节点，但它有一个指向最终数据的指针。
+```
+date函数的效率是很低的，去掉date效率高了很多，检索速度快了很多
 
-总结如下:  
 
-| 动作描述 | 使用聚集索引 | 使用非聚集索引 |
-| :--- | :---: | :---: |
-| 列经常被分组排序 | 应 | 应 |
-| 返回某范围内的数据 | 应 | 不应 |
-| 一个或极少不同值 | 不应 | 不应 |
-| 小数目的不同值 | 应 | 不应 |
-| 大数目的不同值 | 不应 | 应 |
-| 频繁更新的列 | 不应 | 应 |
-| 外键列 | 应 | 应 |
-| 主键列 | 应 | 应 |
-| 频繁修改索引列 | 不应 | 应 |
-详细内容和几个不错的知识点可以参考[这里][聚集索引和非聚集索引的区别理解]。
-
-<!--### Reference-->
-[聚集索引和非聚集索引的区别理解]: http://blog.csdn.net/liu_ben_qian/article/details/8472902
-[聚集索引和非聚集索引（整理）]: http://www.cnblogs.com/aspnethot/articles/1504082.html
-[50多条实用mysql数据库优化建议 ]: https://mp.weixin.qq.com/s?__biz=MzA3MDg0MjgxNQ==&mid=2652391032&idx=1&sn=1492e7fd23c32d15be4250617cac6616&chksm=84da46a8b3adcfbecaead4b8d050856507ec5e372445c867541bce8df5cc07f81c0b558f562d&mpshare=1&scene=1&srcid=0417sRhuuqmraD8rGV9sWdIP&pass_ticket=IuQgf49t22799QAeYgJ2ZdeUsJla%2FLxVmZNOco9%2BuZzB3Bn6ncIdFMQ5sxYwH%2FQA#rd
+### 2. EXPLAIN的使用
+TODO
+<!-- 2. Reference -->
+[MySQL性能分析及explain的使用]: http://database.51cto.com/art/201108/284783.htm

@@ -4,9 +4,8 @@ date: 2017-12-04 10:16:37
 tags: [Algorithm]
 categories: [Algorithm]
 ---
-LeetCode push onto github.
 
-主要就递归(Recursion)、回溯(Backtracking)、动态规划(DP, Dynamic Programming)三种常见的算法进行分析、总结:
+本文主要就递归(Recursion)、回溯(Backtracking)、动态规划(DP, Dynamic Programming)三种常见的算法进行分析、总结:
 ### 1. Recursion
 **思想**:
 ![recursion idea](./recursion_idea.png)  

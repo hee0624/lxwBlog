@@ -1,8 +1,8 @@
 ---
-title: 'Algorithoms: Recursion, Backtracking, DP'
+title: 'Algorithms: Recursion, Backtracking, DP'
 date: 2017-12-04 10:16:37
-tags: [Algorithom]
-categories: [Algorithom]
+tags: [Algorithm]
+categories: [Algorithm]
 ---
 LeetCode push onto github.
 

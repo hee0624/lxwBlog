@@ -51,7 +51,7 @@ ORDER BY clause
 [MySQL的语句执行顺序]: http://www.cnblogs.com/rollenholt/p/3776923.html
 [MySQL Order of Operations?]: http://stackoverflow.com/questions/4001183/mysql-order-of-operations
 
-### 3. MySQL Tips:
+### 2.MySQL Tips
 1).在建立索引时，可能会因为数据量太大，导致索引建立的时间特别长；这时可以尝试重启mysqld服务，然后再建立索引，速度会快很多很多  
 2).
 ```python
@@ -66,8 +66,43 @@ sql = "SELECT DISTINCT news.id AS anon_1, news.public_time, news.news_type, news
 ```
 date函数的效率是很低的，去掉date效率高了很多，检索速度快了很多
 
+### 3.MySQL基本操作
+```mysql
+CREATE DATABASE test_db;
+SHOW DATABASES;
+USE test_db;
+SHOW TABLES;
+DROP TABLE employee;
+DROP DATABASE test_db;
 
-### 2. EXPLAIN的使用
+CREATE TABLE employee (
+  id INT(10) NOT NULL AUTO_INCREMENT,
+  name varchar(20) NOT NULL,
+  age integer,
+  date_on_board datetime,
+  income float,
+  adult boolean,
+  address text,
+  update_time timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+# update_time timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+SHOW CREATE TABLE employee;
+SHOW COLUMNS FROM employee;
+EXPLAIN employee;    # equals to "DESC employee;"
+
+ALTER TABLE employee ADD PRIMARY KEY (id);
+ALTER TABLE employee ADD UNIQUE (name);
+ALTER TABLE employee ADD INDEX _ix_age (age);
+
+SELECT * FROM employee;
+INSERT INTO employee(name, age, date_on_board, income, adult, address) VALUES("Xiaowei Liu", 27, "20160713", 8000.1, TRUE, "北京市海淀区中关村南一街一号软件园1号楼");    # OK
+INSERT INTO employee(name, age, date_on_board, income, adult, address) VALUES("Baoyi Li", 15, "20200612", 6010.1, False, "北京市海淀区中关村南一街一号软件园7号楼");    # OK
+```
+
+### 4.EXPLAIN的使用
 TODO
-<!-- 2. Reference -->
+<!-- 4.Reference -->
 [MySQL性能分析及explain的使用]: http://database.51cto.com/art/201108/284783.htm
+

@@ -1,5 +1,5 @@
 ---
-title: 为什幺要使用装饰器Decorator?
+title: 为什么要使用装饰器Decorator?
 date: 2017-03-20 21:24:17
 tags: Python
 categories: Python

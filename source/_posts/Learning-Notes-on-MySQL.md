@@ -67,7 +67,7 @@ sql = "SELECT DISTINCT news.id AS anon_1, news.public_time, news.news_type, news
 date函数的效率是很低的，去掉date效率高了很多，检索速度快了很多
 
 ### 3.MySQL基本操作
-```mysql
+```sql
 CREATE DATABASE test_db;
 SHOW DATABASES;
 USE test_db;

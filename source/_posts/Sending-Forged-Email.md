@@ -21,10 +21,10 @@ from email.message import Message
 
 def send_email(subject, content):
     try:
-        real_sender, passwd, server = "real_user_name", "password", "smtp.abc.cn"
+        real_sender, passwd, server = "real_sender@abc.cn", "password", "smtp.abc.cn"
         fake_sender = "fake_sender@abc.cn"
-        real_recipients = ["real_recipients1@abc.cn", "real_recipients2@abc.cn", "real_recipients3@abc.cn"]
-        fake_recipients = ["fake_recipients1@abc.cn", "fake_recipients2@abc.cn"]
+        real_recipients = ["real_recipient1@abc.cn", "real_recipient2@abc.cn", "real_recipient3@abc.cn"]
+        fake_recipients = ["fake_recipient1@abc.cn", "fake_recipient2@abc.cn"]
 
         message = Message()
         message["Subject"] = subject

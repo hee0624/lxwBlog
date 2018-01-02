@@ -23,10 +23,10 @@
         var OriginTitile = document.title, titleTime;
         document.addEventListener('visibilitychange', function() {
             if (document.hidden) {
-                document.title = '客官，您还回来吗？';
+                document.title = 'Will you be back?';
                 clearTimeout(titleTime);
             } else {
-                document.title = '客官，欢迎您回来～';
+                document.title = 'Welcome back!';
                 titleTime = setTimeout(function() {
                     document.title = OriginTitile;
                 },2000);

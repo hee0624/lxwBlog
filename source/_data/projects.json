@@ -12,7 +12,7 @@
     {
         "name":"NLP-Experiments",
         "url":"",
-        "desc":"NLP相关知识的总结与实现(基于从新浪财经、东方财富、和讯网、人民网、中证网等网站爬取的新闻数据/Wiki-ZH数据/Sougou数据等数据集)。"
+        "desc":"NLP相关知识的总结与实现:基于从新浪财经、人民网等网站爬取的新闻数据/Wiki-ZH数据/Sougou数据等数据集"
     },
     {
         "name":"FintechSpider",

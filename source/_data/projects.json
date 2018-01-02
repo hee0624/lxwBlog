@@ -1,22 +1,22 @@
 [
     {
-        "name":"FintechSpider",
-        "url":"https://github.com/hee0624/fintech_spider",
-        "desc":"a spider crawling financial data(Scrapy)"
+       "name":"嗅金牛",
+       "url":"https://xiujinniu.com/",
+       "desc":"一款强大的金融大数据预测平台:全局产业链、数据个性化推送、市场情绪实时洞察、基本面量化"
     },
     {
         "name":"PDFTable2Data",
         "url":"http://101.201.102.233:60000/",
-        "desc":"an API extracting table data from PDF docs"
+        "desc":"An API extracting table data from PDF docs"
     },
     {
-       "name":"嗅金牛",
-       "url":"http://xiujinniu.com/xiujinniu/index.php",
-       "desc":"一款金融大数据产品，专注于金融数据，为客户提供数据产品及增值服务"
+        "name":"NLP-Experiments",
+        "url":"",
+        "desc":"NLP相关知识的总结与实现(基于从新浪财经、东方财富、和讯网、人民网、中证网等网站爬取的新闻数据/Wiki-ZH数据/Sougou数据等数据集)。"
     },
     {
-        "name":"URLMonitor",
-        "url":"https://github.com/lxw0109/monitorURLs",
-        "desc":"a tool detecting the updates on some websites"
+        "name":"FintechSpider",
+        "url":"https://github.com/hee0624/fintech_spider",
+        "desc":"A spider crawling financial data(Scrapy)"
     }
 ]

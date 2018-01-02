@@ -9,14 +9,15 @@ You can get in touch with me by [Email](mailto:liu_xiaowei@foxmail.com) or [Gith
 
 ## IT skills
 My favourite programming language is Python, whose simplicity and powerfulness fascinates me.  
-I'm interested in Computer Network, Algorithms, and Linux.  
-My resume in [Chinese](/resume_zh/) and [English](/resume_zh/).
+And I like Computer Network, Algorithms, and Linux very much.  
+Now I'm working on Natural Language Processing.  
+**My resume:** [Chinese](/resume_zh/) / [English](/resume_zh/)  
 
 ## Sports
-I love swimming very much. And I like badminton and basketball as well.
+I love swimming very much. And I like badminton, table tennis and basketball as well.
 
 ## Reading
-Besides technical books, I love reading detective novels, especially those written by [Keigo Higashino](https://en.wikipedia.org/wiki/Keigo_Higashino). You can find my reading list [here](http://xiaoweiliu.cn/2016/08/08/Keigo-Higashino/).
+Besides technical books, I love reading detective novels, especially those written by [Keigo Higashino](https://en.wikipedia.org/wiki/Keigo_Higashino) and [Agatha Christie](https://en.wikipedia.org/wiki/Agatha_Christie). You can find my reading list [here](http://xiaoweiliu.cn/2016/08/08/Keigo-Higashino/) and [here](http://xiaoweiliu.cn/2016/08/08/Keigo-Higashino/).
 
 BTW, my original blog is on [cnblogs](http://www.cnblogs.com/lxw0109).
 

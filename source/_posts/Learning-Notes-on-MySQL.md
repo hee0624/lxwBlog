@@ -101,7 +101,37 @@ INSERT INTO employee(name, age, date_on_board, income, adult, address) VALUES("X
 INSERT INTO employee(name, age, date_on_board, income, adult, address) VALUES("Baoyi Li", 15, "20200612", 6010.1, False, "北京市海淀区中关村南一街一号软件园7号楼");    # OK
 ```
 
-### 4.EXPLAIN的使用
+### 4.MySQL中的`DISTINCT`关键字是针对`SELECT`返回的整体结果进行的，而不仅仅是`DISTINCT`紧跟的那个字段  
+```sql
+SELECT age, sex
+FROM table2;
+/*
+# age, sex
+'1', 'F'
+'2', 'F'
+'2', 'M'
+'3', 'M'
+'3', 'F'
+'4', 'M'
+'4', 'F'
+*/
+
+SELECT DISTINCT age, sex
+FROM table2;
+/*
+# age, sex
+'1', 'F'
+'2', 'F'
+'2', 'M'
+'3', 'M'
+'3', 'F'
+'4', 'M'
+'4', 'F'
+*/
+```
+
+
+### 5.EXPLAIN的使用
 TODO
 <!-- 4.Reference -->
 [MySQL性能分析及explain的使用]: http://database.51cto.com/art/201108/284783.htm

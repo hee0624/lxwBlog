@@ -302,8 +302,8 @@ if __name__ == '__main__':
     time.sleep(3)
     tl.clear()
     """
-    # drawTaiChi()
-    drawTrunk()
+    drawTaiChi()
+    # drawTrunk()
     time.sleep(30)
     tl.clear()
     """

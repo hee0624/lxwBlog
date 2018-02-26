@@ -279,7 +279,7 @@ def drawCube():
     tl.pu()
     tl.home()
     tl.pd()
-    for i in xrange(72):
+    for i in range(72):
         tl.fd(200)
         tl.rt(90)
         tl.fd(200)
@@ -301,12 +301,10 @@ if __name__ == '__main__':
     drawTrunk()
     time.sleep(3)
     tl.clear()
-    """
     drawTaiChi()
     # drawTrunk()
     time.sleep(30)
     tl.clear()
-    """
     drawCircle()
     time.sleep(3)
     tl.clear()
@@ -316,6 +314,6 @@ if __name__ == '__main__':
     drawPythonLogo()
     time.sleep(3)
     tl.clear()
+    """
     drawCube()
     time.sleep(3)
-    """

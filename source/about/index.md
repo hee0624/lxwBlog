@@ -13,10 +13,13 @@ And I like Computer Network, Algorithms, and Linux very much.
 Now I'm working on Natural Language Processing.  
 **My resume:** [Chinese](/resume_zh/) / [English](/resume_zh/)  
 
-## Sports
+## Hobby
+<!--
+### 指数基金
+-->
+### Sports
 I love swimming very much. And I like badminton, table tennis and basketball as well.
-
-## Reading
+### Reading
 Besides technical books, I love reading detective novels, especially those written by [Keigo Higashino](https://en.wikipedia.org/wiki/Keigo_Higashino) and [Agatha Christie](https://en.wikipedia.org/wiki/Agatha_Christie). You can find my reading list [here](http://xiaoweiliu.cn/2016/08/08/Keigo-Higashino/) and [here](http://xiaoweiliu.cn/2016/08/08/Keigo-Higashino/).
 
 BTW, my original blog is on [cnblogs](http://www.cnblogs.com/lxw0109).

@@ -1,6 +1,6 @@
 ---
 title: lxw_Resume_zh.md
-date: 2017-12-30 18:00:00
+date: 2018-03-05 18:00:00
 ---
 # 刘晓伟 简历
 
@@ -20,22 +20,22 @@ date: 2017-12-30 18:00:00
 ### 工作经历
 |  |  |  |  |
 | - | - | - | - |
-| 2016.7~至今 | 中国科学院软件研究所 | 协同创新中心 | 软件研发工程师 |
-| 2015.2~2015.3 | 百度 | 系统部 |系统研发(CDN)工程师(**实习**) |
-| 2012.10~2013.8 | SIMI科技有限公司 | 研发部 | 软件研发工程师(**实习**)	|
+| 2016.7~至今 | 中国科学院软件研究所 | 协同创新中心 | 软件研发工程师, 算法工程师 |
+| 2015.2~2015.3 | 百度 | 系统部 | 系统研发(CDN)工程师(**实习**) |
+| 2012.10~2013.8 | SIMI科技有限公司 | 研发部 | 软件研发工程师(**实习**) |
 |  |  |  |  |
 
 
-### 开源代码阅读
-[pdf-table-extract](https://github.com/ashima/pdf-table-extract)&emsp;&emsp;[threadpool-PyPI](https://github.com/SpotlightKid/threadpool)
-
+### 开源项目学习
+[solving_captchas_code_examples](https://github.com/lxw0109/ML-Experiments/tree/master/CAPTCHA/solving_captchas_code_examples)&emsp;&emsp;[pdf_table_extract](https://github.com/ashima/pdf-table-extract)&emsp;&emsp;[threadpool_PyPI](https://github.com/SpotlightKid/threadpool)
 
 ### 专业技能
 + 熟悉Python, 熟悉Shell脚本编程
 + 熟练使用Linux, Git, Vim
-+ 熟练使用MongoDB, MySQL, Redis
 + 熟悉常用的算法和数据结构
++ 熟悉常用的机器学习算法, 会用scikit-learn, pandas等机器学习库, 会用Keras等深度学习框架
 + 熟悉计算机网络, TCP/IP协议, 网络爬虫
++ 熟练使用MongoDB, MySQL, Redis
 + 通过CET-6考试, 具备良好的听说读写译能力
 
 

@@ -1,3 +1,9 @@
+---
+title: Learning Notes on numpy
+date: 2018-01-27 23:32:09
+tags: [numpy, Machine Learning]
+categories: [numpy, Machine Learning]
+---
 
 Reference: [NumPy-快速处理数据](http://old.sebug.net/paper/books/scipydoc/numpy_intro.html)  
 

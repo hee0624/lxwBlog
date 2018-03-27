@@ -48,7 +48,8 @@ def activation_function_and_derivative():
         for item in x:
             ex = math.exp(item)
             e_x = math.exp(-item)
-            y.append(1 - ((ex - e_x) ** 2) / ((ex + e_x) ** 2))
+            # y.append(1 - ((ex - e_x) ** 2) / ((ex + e_x) ** 2))
+            y.append(4 / ((ex + e_x) ** 2))
         return y
 
     y = tanh(x)

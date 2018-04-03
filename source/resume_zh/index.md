@@ -13,7 +13,7 @@ date: 2018-03-05 18:00:00
 |  |  |  |  |
 | - | - | - | - |
 | 2013~2016 | 中国科学院 | 计算机网络信息中心 | 硕士&nbsp;(保送) |
-| 2009~2013 | 吉林大学 | 计算机科学与技术学院 | 学士&nbsp;(专业前5%) |
+| 2009~2013 | 吉林大学 | 计算机科学与技术学院 | 学士&nbsp;(top 5%) |
 |  |  |  |  |
 
 
@@ -27,46 +27,45 @@ date: 2018-03-05 18:00:00
 
 
 ### 开源项目学习
-[solving_captchas_code_examples](https://github.com/lxw0109/ML-Experiments/tree/master/CAPTCHA/solving_captchas_code_examples)&emsp;&emsp;[pdf_table_extract](https://github.com/ashima/pdf-table-extract)&emsp;&emsp;[threadpool_PyPI](https://github.com/SpotlightKid/threadpool)
+[solving_captchas_code_examples](https://github.com/lxw0109/ML-Experiments/tree/master/CAPTCHA/solving_captchas_code_examples)&emsp;&emsp;[pdf_table_extract](https://github.com/ashima/pdf-table-extract)&emsp;&emsp;[threadpool](https://github.com/SpotlightKid/threadpool)
+
 
 ### 专业技能
 + 熟悉Python, 熟悉Shell脚本编程
 + 熟练使用Linux, Git, Vim
 + 熟悉常用的算法和数据结构
-+ 熟悉常用的机器学习算法, 会用scikit-learn, pandas等机器学习库, 会用Keras等深度学习框架
-+ 熟悉计算机网络, TCP/IP协议, 网络爬虫
++ 熟悉计算机网络, TCP/IP协议, 网络爬虫(scrapy, requests)
 + 熟练使用MongoDB, MySQL, Redis
-+ 通过CET-6考试, 具备良好的听说读写译能力
++ 通过CET-6, 能够快速查阅英文资料, 具备良好的听说读写译能力
++ 熟悉常用的机器学习算法, 熟悉 pandas, numpy, scikit-learn 等机器学习库, 会用 Keras 深度学习框架
 
 
 ### 项目经验
-+ **嗅金牛金融信息查询平台&nbsp;&nbsp;2016.6~2017.2&nbsp;&nbsp;关键技术: PHP, Python, MySQL, Elasticsearch, LVS**
-**项目介绍**: 嗅金牛是一个基于NLP的上市公司知识图谱与事件驱动分析平台, 专注于金融数据, 为客户提供上市公司信息查询、数据产品及增值服务
++ **重要新闻推荐系统&nbsp;&nbsp;&nbsp;2017.8 - 2018.3&nbsp;&nbsp;&nbsp;关键技术: Python, Elasticsearch, word2vec**
+**项目简介**: 重要新闻推荐是嗅金牛智能投研平台中的重要功能, 通过计算新闻的重要性, 为用户提供重要新闻推荐服务
 **本人工作**:
- + 将3000家国内A股上市公司的PDF年报文档进行解析, 基于`poppler`和`numpy`实现了表格区域识别算法、同一页内不同表格切割算法, 以及特殊表格的提取算法, 从而准确提取PDF文档中的关键表格数据(包括公司股东及董事高管、主营业务、投资关系、收入分布等信息), 并进行数据清洗和数据入库
- + 使用`ThinkPHP`框架完成网站的后台开发, 完成网站部署并实现负载均衡(`LVS`)
-
-+ **网站自动化监测与警报系统&nbsp;&nbsp;&nbsp;2015.2~2015.5&nbsp;&nbsp;关键技术: Python, Shell, Xpath**
-**项目介绍**: 该系统自动、定期地爬取指定网站的首页内容, 计算网页内容的摘要数据(`MD5`)，通过比对相邻两次摘要数据判断网站内容是否更新. 当监测到网站访问异常或网站内容更新时, 自动发送邮件通知到指定的收件人. 该系统支持网站访问故障检测, 网页更新检测, 更新内容提取, 日志记录, 自动化邮件通知等功能
-**本人工作**: 该系统由本人独立开发完成
-
-+ **局域网内UDP数据传输工具&nbsp;&nbsp;&nbsp;2014.3~2014.4&nbsp;&nbsp;&nbsp;关键技术: C#, WPF**
-**项目介绍**: 该工具自动扫描局域网内运行本软件的主机(包括PC端和Android端), 支持与扫描到的主机进行可靠的UDP文字通信和文件传输
-**本人工作**: 完成PC端的全部功能实现, 具体包括: PC端GUI开发(`WPF`), 扫描局域网内运行本软件的主机, 与扫描到的主机进行文字通信和文件传输, 采用序列号、确认报文和超时重传机制实现UDP的可靠数据传输, 并对传输的数据进行了加密处理
-
-+ **虚拟数控车铣床仿真系统&nbsp;&nbsp;&nbsp;2012.10~2013.8&nbsp;&nbsp;&nbsp;关键技术: C#, XNA**
-**项目介绍**: 该项目是本人在吉林省SIMI科技有限公司实习时参与的项目, 项目由FANUC, HNC, SIEMENS三个车(铣)床仿真系统组成, 每个系统主要分为液晶显示(仿真)和程序解释(核心功能)两个模块
+ 1. 数据爬取: 从西本新干线、Mysteel、中钢网、生意社等钢铁领域垂直网站爬取历史与实时新闻数据(时间跨度10年, 数量约400W)
+ 2. 异常日期筛选: 基于期货交易价格数据, 确定异常交易日和异常交易时间窗口
+ 3. 重要新闻种子池构建: 将异常交易时间窗口内的新闻进行主题分类, 选择供应、需求、政策三类资讯作为重要新闻数据源, 并入Elasticsearch
+ 4. 重要新闻判定和推荐: 将新闻与ES重要新闻种子池中的新闻进行比对, 结合ES 检索得分阈值及基于fasttext词向量的句子相似度阈值, 筛选出重要新闻，并推荐给用户
++ **嗅金牛智能投研平台&nbsp;&nbsp;&nbsp;2016.7 - 2017.7&nbsp;&nbsp;&nbsp;关键技术: Python, MySQL, Elasticsearch, LVS**
+**项目简介**: 嗅金牛是一个基于人工智能的专业的黑色期货智能投研平台, 平台专注于行业产业链、市场情绪实时洞察、基本面量化、数据个性化推送, 为客户提供产业数据、资讯、智能投研等金融信息服务
+本人工作:
+ 1. 将3000家国内A股上市公司的PDF年报文档进行解析, 基于poppler和numpy实现表格区域识别算法、同一页内不同表格切割算法, 以及特殊表格的提取算法, 从而准确提取PDF文档中的关键表格数据(包括公司股东及董事高管、主营业务、投资关系、收入分布等信息), 并进行数据清洗和数据入库
+ 2. 进行中国知网、裁判文书网、天眼查等网站所需数据的爬取(IP代理、Cookie伪造); 完成数据爬取架构的设计、实现和优化
+ 3. 使用ThinkPHP框架完成网站的后台开发, 完成网站部署并实现负载均衡(LVS)
++ **虚拟数控车铣床仿真系统&nbsp;&nbsp;&nbsp;2012.10 - 2013.8&nbsp;&nbsp;&nbsp;关键技术: C#, XNA**
+**项目简介**: 该项目是本人在吉林省SIMI科技有限公司实习时参与的项目, 项目由FANUC, HNC, SIEMENS三个车(铣)床仿真系统组成, 每个系统主要分为液晶显示(仿真)和程序解释(核心功能)两个模块
 **本人工作**: 负责液晶显示和程序解释两个模块的开发和优化，具体包括:
- + XNA模型绘制: 轨迹绘制, 模型旋转缩放, 二维显示等
- + 程序解释的优化和开发: 优化代码和程序算法, 使系统运行效率提高50%以上
- + 增加实时功率, 负载计算, 工艺分析, 仿真速率可控(慢/中/快), 以及全新的卧式铣床的开发等
+ 1. XNA模型绘制: 轨迹绘制, 模型旋转缩放, 二维显示等
+ 2. 程序解释的优化和开发: 优化代码和程序算法, 使系统运行效率提高50%以上
+ 3. 增加实时功率, 负载计算, 工艺分析, 仿真速率可控(慢/中/快), 以及全新的卧式铣床的开发等
 
 
 ### 科研成果
 **学术论文**:
 + RPKI Deployment Risks and Solutions
 + RPKI中CA资源分配风险及防护技术研究
-+ Secure and Scalable Deployment of Resource Public Key Infrastructure
 
 **专利**:
 + 一种加强RPKI中CA证书签发安全的事前控制方法

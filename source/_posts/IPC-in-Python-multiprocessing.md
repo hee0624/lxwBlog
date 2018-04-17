@@ -2,7 +2,7 @@
 title: IPC in Python(multiprocessing)
 date: 2018-02-13 19:16:11
 tags: [Python, IPC, multiprocessing]
-tags: [Python, IPC, multiprocessing]
+categories: [Python, IPC, multiprocessing]
 ---
 最近在工作中使用IPC(Inter-Process Communication), 发现直接使用全局变量在多个进程间通信是不可行的，代码如下:
 ```python

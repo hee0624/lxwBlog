@@ -4,7 +4,8 @@ date: 2018-01-18 11:36:08
 tags: [Machine Learning]
 categories: [Machine Learning]
 ---
-
+### 0. 标准化和归一化
+[标准化和归一化什么区别](https://www.zhihu.com/question/20467170)
 ### 1.信息熵(information entropy)
 信息熵是表示随机变量不确定性的度量。随机事件的不确定性叫做“熵”. 信息量的量化度量叫做“熵”.变量的不确定性越大，熵就越大，要把它搞清楚所需要的信息量也就越大.  
 ```
@@ -62,3 +63,10 @@ I(X;Y) = H(X) - H(X|Y)
 梯度下降法求代价函数(cost function)的最小值, 梯度下降法要求所有的参数必须同时更新(simultaneous update)
 ![gradient_descent.png](./gradient_descent.png)
 ![gradient_descent_property.png](./gradient_descent_property.png)
+
+### Pitfalls
+1. 当要to_categorical()的数据中存在负数时就会出现问题，所以在使用to_categorical()时必须将数据处理成非负数
+```
+# NOTE: np_utils.to_categorical() does not take negative values
+Y = np_utils.to_categorical(Y, num_classes=2)
+```

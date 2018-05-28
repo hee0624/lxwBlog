@@ -4,8 +4,6 @@ date: 2018-01-18 11:36:08
 tags: [Machine Learning]
 categories: [Machine Learning]
 ---
-### 0. 标准化和归一化
-[标准化和归一化什么区别](https://www.zhihu.com/question/20467170)
 ### 1.信息熵(information entropy)
 信息熵是表示随机变量不确定性的度量。随机事件的不确定性叫做“熵”. 信息量的量化度量叫做“熵”.变量的不确定性越大，熵就越大，要把它搞清楚所需要的信息量也就越大.  
 ```
@@ -17,11 +15,17 @@ H(X) = -∑P(x)logP(x)
 ```
 H(X|Y) = -∑P(x,y)logP(x|y)
 ```
+```
+根据熵的连锁规则，有
+H(X,Y) = H(X) + H(Y|X) = H(Y) + H(X|Y)
+ =>
+H(X) - H(X|Y) = H(Y) - H(Y|X)
+```
 
 ### 2.互信息(mutual information)
 两个随机事件的相关性的量化度量叫做“互信息”.  
 ```
-I(X;Y) = H(X) - H(X|Y)
+I(X;Y) = H(X) - H(X|Y) = H(Y) - H(Y|X)
 ```
 互信息是熵与条件熵的差, 取值在0到min(H(X), H(Y))之间，当X和Y完全相关时，它的取值为H(X)（查看条件熵公式即可理解），且H(X) = H(Y)；当两者完全无关时，它的取值为0。
 

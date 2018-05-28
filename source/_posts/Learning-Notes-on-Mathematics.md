@@ -124,4 +124,4 @@ $$
 ## 9. 高阶无穷小
 对于两个无穷小量 $\alpha$ 和 $\beta$ ，如果 $\lim\frac{\alpha}{\beta}=0$ ，就把 $\alpha$ 叫做比 $\beta$ 高阶的无穷小量，并把 $\beta$ 叫做比 $\alpha$ 低阶的无穷小量；简称 $\alpha$ 是 $\beta$ 的高阶无穷小，$\beta$ 是 $\alpha$ 的低阶无穷小，记成 $\alpha = o(\beta)$ 。  
 如果 $\lim\frac{\alpha}{\beta^k}=C$ ，其中 $C$ 为异于零的常数，这时把 $\alpha$ 叫做 $\beta$ 的 $k$ 阶无穷小。  
-例如，因为 $\lim_{x \to 0}\frac{3x^2}{x} = \lim_{x \to 0}3x = 3\lim_{x \to 0}x = 3*0 = 0$ ，所以 $x \to 0$ 时 $3x^2$ 是比 $x$ 较高阶的无穷小，**意思是说在 $x \to 0$ 的过程中 $3x^2$ 比 $x$ 趋向0的速度快**。  
+例如，因为 $\displaystyle \lim_{x \to 0}\frac{3x^2}{x} = \lim_{x \to 0}3x = 3\lim_{x \to 0}x = 3*0 = 0$ ，所以 $x \to 0$ 时 $3x^2$ 是比 $x$ 较高阶的无穷小，<strong>意思是说在 $x \to 0$ 的过程中 $3x^2$ 比 $x$ 趋向0的速度快</strong>。  

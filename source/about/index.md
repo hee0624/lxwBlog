@@ -11,7 +11,7 @@ You can get in touch with me by [Email](mailto:liu_xiaowei@foxmail.com) or [Gith
 My favourite programming language is Python, whose simplicity and powerfulness fascinates me.  
 And I like Computer Network, Algorithms, and Linux very much.  
 Now I'm working on Natural Language Processing.  
-**My resume:** [Chinese](/resume_zh/) / [English](/resume_zh/)  
+**My CV:** [Chinese](/CV_zh/) / [English](/CV_zh/)  
 
 ## Interests
 <!--

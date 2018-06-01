@@ -107,7 +107,8 @@ A: m\*n, B: n\*s
 
 ## 8. Taylor公式
 泰勒公式是将一个在 $x=x_0$ 处具有n阶导数的函数 $f(x)$ 利用关于 $(x-x_0)$ 的n次多项式来逼近函数的方法。  
-若函数 $f(x)$ 在包含 $x_0$ 的某个闭区间[a, b]上具有n阶导数，且在开区间(a, b)上具有(n+1)阶导数，则对闭区间[a,b]上任意一点x，下式成立:
+若函数 $f(x)$ 在包含 $x_0$ 的某个闭区间[a, b]上具有n阶导数，且在开区间(a, b)上具有(n+1)阶导数，则对闭区间[a,b]上任意一点x，下式成立
+:
 $$
 f(x) = f(x_0) + f'(x_0)(x-x_0) + \frac{f''(x_0)}{2!}(x-x_0)^2 + ... + \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n + R_n(x)
 $$
@@ -125,3 +126,61 @@ $$
 对于两个无穷小量 $\alpha$ 和 $\beta$ ，如果 $\lim\frac{\alpha}{\beta}=0$ ，就把 $\alpha$ 叫做比 $\beta$ 高阶的无穷小量，并把 $\beta$ 叫做比 $\alpha$ 低阶的无穷小量；简称 $\alpha$ 是 $\beta$ 的高阶无穷小，$\beta$ 是 $\alpha$ 的低阶无穷小，记成 $\alpha = o(\beta)$ 。  
 如果 $\lim\frac{\alpha}{\beta^k}=C$ ，其中 $C$ 为异于零的常数，这时把 $\alpha$ 叫做 $\beta$ 的 $k$ 阶无穷小。  
 例如，因为 $\displaystyle \lim_{x \to 0}\frac{3x^2}{x} = \lim_{x \to 0}3x = 3\lim_{x \to 0}x = 3*0 = 0$ ，所以 $x \to 0$ 时 $3x^2$ 是比 $x$ 较高阶的无穷小，<strong>意思是说在 $x \to 0$ 的过程中 $3x^2$ 比 $x$ 趋向0的速度快</strong>。  
+
+## 10. 取模和取余
+对于整型数a，b来说，取模运算或者取余运算的方法都是:  
+1. 求整数商: `c = a / b`  
+2. 计算模或者余数: `r = a - c * b`  
+
+**取模运算和取余运算在第一步不同: 取余运算在取c的值时，向 0 方向舍入；而取模运算在计算c的值时，向负无穷方向舍入。**  
+例如计算 -7 mod 4  
+那么a = -7, b = 4  
+第一步: 求整数商c，如进行取模运算c = -2(向负无穷方向舍入)，求余c = -1(向0方向舍入)  
+第二步: 计算模和余数的公式相同，但因为c的值不同，取模时r = 1，取余时r = -3  
+**归纳:**  
++ 当a和b符号一致时，取模运算和取余运算所得的c的值一致，因此结果一致
++ 当符号不一致时，结果不一样。取模运算结果的符号和b一致，取余运算结果的符号和a一致
+
+另外各个环境下%运算符的含义不同，比如C/C++，Java 为取余，而Python则为取模
+
+**References**:  
+ + [取模运算](https://baike.baidu.com/item/%E5%8F%96%E6%A8%A1%E8%BF%90%E7%AE%97/10739384?fr=aladdin)
+
+两个整数 a和b，若它们除以正整数 m 所得的余数相等，则称 a，b对于模m同余，记作 ${a \equiv b {\pmod {m}}}$, 读作a同余于b模m，或读作a与b关于模m同余。  
+比如 $26 \equiv 14{\pmod {12}}$。  
+
+**性质**:
+1. 整除性  
+ $ a\equiv b{\pmod {m}} \Rightarrow c \cdot m=a-b, c \in \mathbb {Z}$ 即是说 a 和 b 之差是 m 的倍数  
+2. 传递性  
+ $ {\left.{\begin{matrix}a\equiv b{\pmod {m}}\\b\equiv c{\pmod {m}}\end{matrix}}\right\}\Rightarrow a\equiv c{\pmod {m}}}$
+3. 保持基本运算  
+ ```
+ {\left.{\begin{matrix}a\equiv b{\pmod {m}}\\c\equiv d{\pmod {m}}\end{matrix}}\right\} \Rightarrow  \left\{{\begin{matrix}a\pm c\equiv b\pm d{\pmod {m}}\\ac\equiv bd{\pmod {m}}\end{matrix}}\right.}
+ ```
+ _(Not working for mathjax, so I have to place it in a code block)_.  
+ 这性质更可进一步引申成为这样:  
+ ${a\equiv b{\pmod {m}}\Rightarrow {\begin{cases}an\equiv bn{\pmod {m}},\forall n\in \mathbb {Z} \\a^{n}\equiv b^{n}{\pmod {m}},\forall n\in \mathbb {N} ^{0}\end{cases}}}$
+4. 放大缩小底数  
+ k为整数，n为正整数  ${(km\pm a)^{n}\equiv (\pm a)^{n}{\pmod {m}}}$
+5. 放大缩小模数  
+k为正整数，${a\equiv b{\pmod {m}}}$，当且仅当 ${ka\equiv kb{\pmod {km}}}$
+
+**References**:  
+ + [同余](https://zh.wikipedia.org/wiki/%E5%90%8C%E9%A4%98)
+
+## 11. 卡方分布(chi-square distribution)
+若n个相互独立的随机变量ξ₁、ξ₂、……、ξn ，均服从**标准正态分布**(也称**独立同分布于标准正态分布**)，则这n个服从标准正态分布的随机变量的平方和${\displaystyle Q=\sum_{i=1}^{n}\xi_i^2}$ 构成一新的随机变量，其分布规律称为$\chi^2$分布(chi-square distribution)，其中参数v称为自由度，正如正态分布中均数或方差不同就是另一个正态分布一样，自由度不同就是另一个$\chi^2$分布。记为$Q\sim\chi^2(v)$或者$Q\sim\chi_v^2$ (其中$v=n-k$，k为限制条件数)。  
+卡方分布是由正态分布构造而成的一个新的分布，当自由度v很大时，$\chi^2$分布近似为正态分布。  
+对于任意正整数x，自由度为v的卡方分布是一个随机变量X的机率分布。  
+
+**卡方分布性质**:  
+1. $\chi^2$分布在第一象限内，卡方值都是正值，呈正偏态(右偏态)，随着参数v的增大，$\chi^2$分布趋近于正态分布. **卡方分布密度曲线下的面积都是1**
+2. $\chi^2$分布的均值与方差可以看出，随着自由度v的增大，$\chi^2$分布向正无穷方向延伸(因为均值v越来越大)，分布曲线也越来越低阔(因为方差2v越来越大)
+3. 不同的自由度决定不同的卡方分布，自由度越小，分布越偏斜
+4. 若$\chi_{(v_1)}^2$, $\chi_{(v_2)}^2$互相独立，则$\chi_{(v_1)}^2 + \chi_{(v_2)}^2$服从$\chi^2$分布，自由度为$v_1 + v_2$
+5. $\chi^2$分布的**均数为自由度v**，记为 $E(\chi^2) = v$
+6. $\chi^2$分布的**方差为2倍的自由度2v**，记为 $D(\chi^2) = 2v$
+
+**References**:  
+ + [卡方分布](https://baike.baidu.com/item/%E5%8D%A1%E6%96%B9%E5%88%86%E5%B8%83/2714796)

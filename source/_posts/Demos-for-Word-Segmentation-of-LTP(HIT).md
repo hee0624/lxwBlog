@@ -1,8 +1,8 @@
 ---
 title: Demos for Word Segmentation of LTP(HIT)
 date: 2017-08-07 14:32:28
-tags: [Natural Language Processing, Segmentation]
-categories: [Natural Language Processing, Segmentation]
+tags: [NLP, Segmentation]
+categories: [NLP, Segmentation]
 ---
 
 [哈工大语言技术平台（Language Technology Platform，LTP）](http://www.ltp-cloud.com/intro/#ltp)

@@ -9,7 +9,7 @@ categories: [Machine Learning, Feature Engineering]
 
 ## 1.数据预处理
 无量纲化使不同规格的数据转换到同一规格。常见的无量纲化方法有**标准化**和**区间缩放法**。**标准化的前提是特征值服从正态分布**，标准化后，其转换成标准正态分布。区间缩放法利用了边界值信息，将特征的取值区间缩放到某个特点的范围，例如[0, 1]等。  
-**标准化 vs 归一化的区别**(程序验证和示例请参见[github代码](https://github.com/lxw0109/ML-Experiments/blob/master/preprocessing_method/src/preprocessing_sklearn.py)):  
+**标准化 vs 归一化的区别**(程序验证和示例请参见[github代码](https://github.com/lxw0109/ML-Experiments/blob/master/preprocessing_method/src/feature_engineering_sklearn.py)):  
 + 标准化是依照特征矩阵的**列**处理数据，其通过求z-score的方法，将样本的特征值转换到同一量纲下
 + 归一化是依照特征矩阵的**行**处理数据，其目的在于样本向量在点乘运算或其他核函数计算相似性时，拥有统一的标准，也就是都转化为"单位向量", 例如使用l2范数进行归一化.
 
@@ -17,9 +17,9 @@ categories: [Machine Learning, Feature Engineering]
 
 | 类	| 功能 | 说明 |
 | -- | ---- | ---- |
-| StandardScaler | 无量纲化 | 标准化，基于特征矩阵的列，将特征值转换至服从标准正态分布 |
+| StandardScaler | 无量纲化 | 标准化，**基于特征矩阵的列**，将特征值转换至服从标准正态分布 |
 | MinMaxScaler | 无量纲化 | 区间缩放，基于最大最小值，将特征值转换到[0, 1]区间上 |
-| Normalizer | 归一化 | 基于特征矩阵的行，将样本向量转换为“单位向量” |
+| Normalizer | 归一化 | **基于特征矩阵的行**，将样本向量转换为“单位向量” |
 | Binarizer | 二值化 | 基于给定阈值，将定量特征按阈值划分 |
 | OneHotEncoder | 哑编码 | 将定性数据编码为定量数据 |
 | Imputer | 缺失值计算 | 计算缺失值，缺失值可填充为均值等 |

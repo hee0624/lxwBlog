@@ -1,5 +1,5 @@
 ---
-title: Learning Notes on Mathematics
+title: Basic Mathematics for Machine Learning
 date: 2018-03-20 10:31:47
 mathjax: true
 tags: [Mathematics]
@@ -125,7 +125,7 @@ $$
 ## 9. 高阶无穷小
 对于两个无穷小量 $\alpha$ 和 $\beta$ ，如果 $\lim\frac{\alpha}{\beta}=0$ ，就把 $\alpha$ 叫做比 $\beta$ 高阶的无穷小量，并把 $\beta$ 叫做比 $\alpha$ 低阶的无穷小量；简称 $\alpha$ 是 $\beta$ 的高阶无穷小，$\beta$ 是 $\alpha$ 的低阶无穷小，记成 $\alpha = o(\beta)$ 。  
 如果 $\lim\frac{\alpha}{\beta^k}=C$ ，其中 $C$ 为异于零的常数，这时把 $\alpha$ 叫做 $\beta$ 的 $k$ 阶无穷小。  
-例如，因为 $\displaystyle \lim_{x \to 0}\frac{3x^2}{x} = \lim_{x \to 0}3x = 3\lim_{x \to 0}x = 3*0 = 0$ ，所以 $x \to 0$ 时 $3x^2$ 是比 $x$ 较高阶的无穷小，<strong>意思是说在 $x \to 0$ 的过程中 $3x^2$ 比 $x$ 趋向0的速度快</strong>。  
+例如，因为 $\displaystyle \lim_{x \to 0协方差表示的是两个变量的总体的误差，这与只表示一个变量误差的方差不同。 如果两个变量的变化趋势一致，也就是说如果其中一个大于自身的期望值，另外一个也大于自身的期望值，那么两个变量之间的协方差就是正值。 如果两个变量的变化趋势相反，即其中一个大于自身的期望值，另外一个却小于自身的期望值，那么两个变量之间的协方差就是负值。}\frac{3x^2}{x} = \lim_{x \to 0}3x = 3\lim_{x \to 0}x = 3*0 = 0$ ，所以 $x \to 0$ 时 $3x^2$ 是比 $x$ 较高阶的无穷小，<strong>意思是说在 $x \to 0$ 的过程中 $3x^2$ 比 $x$ 趋向0的速度快</strong>。  
 
 ## 10. 取模和取余
 对于整型数a，b来说，取模运算或者取余运算的方法都是:  
@@ -184,3 +184,59 @@ k为正整数，${a\equiv b{\pmod {m}}}$，当且仅当 ${ka\equiv kb{\pmod {km}
 
 **References**:  
  + [卡方分布](https://baike.baidu.com/item/%E5%8D%A1%E6%96%B9%E5%88%86%E5%B8%83/2714796)
+
+## 12. 协方差(Covariance)
+**协方差**表示的是两个变量的总体的误差，这与只表示一个变量误差的方差不同。 如果两个变量的变化趋势一致，也就是说如果其中一个大于自身的期望值，另外一个也大于自身的期望值，那么两个变量之间的协方差就是正值。 如果两个变量的变化趋势相反，即其中一个大于自身的期望值，另外一个却小于自身的期望值，那么两个变量之间的协方差就是负值。  
+期望值分别为E[X]与E[Y]的两个实随机变量X与Y之间的协方差Cov(X,Y)定义为：
+$$
+Cov(X, Y) = E[(X-E[X])(Y-E[Y])] = E[XY] - 2E[Y]E[X] + E[X]E[Y] = E[XY] - E[X]E[Y] 
+$$
+如果X与Y是统计独立的，那么二者之间的协方差就是0，因为两个独立的随机变量满足$E[XY]=E[X]E[Y]$。  
+但是，**反过来并不成立，即如果X与Y的协方差为0，二者并不一定是统计独立的**。  
+**若两个随机变量X和Y相互独立，则Cov(X, Y)=0，因而若Cov(X, Y)不为零，则X和Y必不是相互独立的**。  
+
+**协方差与方差之间有如下关系:**  
+$$
+D(X+Y)=D(X)+D(Y)+2Cov(X，Y)
+$$
+$$
+D(X-Y)=D(X)+D(Y)-2Cov(X，Y)
+$$
+**协方差用于度量各个维度(如下式中的X和Y两个维度)偏离其均值的程度:**
+$$Cov(X,Y)=\frac{\displaystyle \sum_{i=1}^{n}(X_i - \overline{X})(Y_i - \overline{Y})}{n-1}$$
+
+**协方差的性质:**  
+ + $Cov(X，Y)=Cov(Y，X)$
+ + $Cov(aX，bY)=abCov(X，Y)$    a，b是常数
+ + $Cov(X1+X2，Y)=Cov(X1，Y)+Cov(X2，Y)$
+
+由协方差定义，可以看出$Cov(X，X)=D(X)$，$Cov(Y，Y)=D(Y)$。
+
+$$\rho_{XY}=\frac{Cov(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)}}$$
+称为随机变量X和Y的(Pearson)相关系数  
+若$\rho_{XY}=0$，则称X与Y**不_线性_相关**  
+协方差有时也称为是两个随机变量之间"线性独立性"的度量
+
+**协方差矩阵:**  
+分别为m与n个标量元素的列向量随机变量X与Y，这两个变量之间的协方差定义为m×n矩阵.其中X包含变量X1,X2,...,Xm，Y包含变量Y1,Y2,...,Yn，假设X1的期望值为μ1，Y2的期望值为v2，那么在协方差矩阵中(1,2)的元素就是X1和Y2的协方差。
+
+**两个向量变量的协方差Cov(X,Y)与Cov(Y,X)互为转置矩阵**。  
+协方差矩阵的定义如下:
+$$
+C_{n*n}=(c_{i,j})\quad其中c_{i,j}=cov(Dim_i,Dim_j)
+$$
+举一个简单的三维的例子，假设数据集有{x,y,z}三个维度，则协方差矩阵为
+$$
+C = \left\lgroup\begin{aligned}
+cov(x,x) \quad cov(x, y) \quad cov(x, z)\\
+cov(y,x) \quad cov(y, y) \quad cov(y, z)\\
+cov(z,x) \quad cov(z, y) \quad cov(z, z)
+\end{aligned}\right\rgroup
+$$
+可见，协方差矩阵是一个对称的矩阵，而且对角线是各个维度上的方差。  
+**必须要明确一点，协方差矩阵计算的是_不同维度_之间的协方差，而不是_不同样本_之间的。**  
+
+**References**:  
+ + [协方差](https://baike.baidu.com/item/%E5%8D%8F%E6%96%B9%E5%B7%AE/2185936?fr=aladdin)
+ + [浅谈协方差矩阵](http://pinkyjie.com/2010/08/31/covariance/)
+

@@ -69,6 +69,7 @@ $ E(X) = \int_{-\infty}^{\infty}x*f(x) {\rm d}x $
 1. **先验概率** 是指根据以往经验和分析得到的概率  
  比如骰子, 我们都知道掷到任一面的概率是1/6, 而且无数次重复实验也表明是这个数, 这是一种常识, 也是在我们不知道任何情况下必然会说出的一个值. 所谓的先验概率是我们在未知条件下对事件发生可能性猜测的数学表示
 2. **后验概率** 事情已经发生，求这件事情发生的原因是由某个因素引起的可能性的大小  
+ 后验概率的这个说法和李航的《统计学习方法》中的说法不一致，李航的说法是后验概率就是P(Y=ck|X=x),Y是要预测的类，数学含义是给定样本x，其被分类到ck类的概率。 P52
 
 **References**:  
  + [贝叶斯公式的直观理解(先验概率/后验概率)](https://www.cnblogs.com/yemanxiaozu/p/7680761.html)
@@ -125,7 +126,7 @@ $$
 ## 9. 高阶无穷小
 对于两个无穷小量 $\alpha$ 和 $\beta$ ，如果 $\lim\frac{\alpha}{\beta}=0$ ，就把 $\alpha$ 叫做比 $\beta$ 高阶的无穷小量，并把 $\beta$ 叫做比 $\alpha$ 低阶的无穷小量；简称 $\alpha$ 是 $\beta$ 的高阶无穷小，$\beta$ 是 $\alpha$ 的低阶无穷小，记成 $\alpha = o(\beta)$ 。  
 如果 $\lim\frac{\alpha}{\beta^k}=C$ ，其中 $C$ 为异于零的常数，这时把 $\alpha$ 叫做 $\beta$ 的 $k$ 阶无穷小。  
-例如，因为 $\displaystyle \lim_{x \to 0协方差表示的是两个变量的总体的误差，这与只表示一个变量误差的方差不同。 如果两个变量的变化趋势一致，也就是说如果其中一个大于自身的期望值，另外一个也大于自身的期望值，那么两个变量之间的协方差就是正值。 如果两个变量的变化趋势相反，即其中一个大于自身的期望值，另外一个却小于自身的期望值，那么两个变量之间的协方差就是负值。}\frac{3x^2}{x} = \lim_{x \to 0}3x = 3\lim_{x \to 0}x = 3*0 = 0$ ，所以 $x \to 0$ 时 $3x^2$ 是比 $x$ 较高阶的无穷小，<strong>意思是说在 $x \to 0$ 的过程中 $3x^2$ 比 $x$ 趋向0的速度快</strong>。  
+例如，因为 $\displaystyle \lim_{x \to 0}\frac{3x^2}{x} = \lim_{x \to 0}3x = 3\lim_{x \to 0}x = 3*0 = 0$ ，所以 $x \to 0$ 时 $3x^2$ 是比 $x$ 较高阶的无穷小，<strong>意思是说在 $x \to 0$ 的过程中 $3x^2$ 比 $x$ 趋向0的速度快</strong>。  
 
 ## 10. 取模和取余
 对于整型数a，b来说，取模运算或者取余运算的方法都是:  
@@ -150,7 +151,7 @@ $$
 比如 $26 \equiv 14{\pmod {12}}$。  
 
 **性质**:
-1. 整除性  
+1. 整除性  https://blog.csdn.net/northeastsqure/article/details/50163031
  $ a\equiv b{\pmod {m}} \Rightarrow c \cdot m=a-b, c \in \mathbb {Z}$ 即是说 a 和 b 之差是 m 的倍数  
 2. 传递性  
  $ {\left.{\begin{matrix}a\equiv b{\pmod {m}}\\b\equiv c{\pmod {m}}\end{matrix}}\right\}\Rightarrow a\equiv c{\pmod {m}}}$
@@ -158,7 +159,7 @@ $$
  ```
  {\left.{\begin{matrix}a\equiv b{\pmod {m}}\\c\equiv d{\pmod {m}}\end{matrix}}\right\} \Rightarrow  \left\{{\begin{matrix}a\pm c\equiv b\pm d{\pmod {m}}\\ac\equiv bd{\pmod {m}}\end{matrix}}\right.}
  ```
- _(Not working for mathjax, so I have to place it in a code block)_.  
+ _(Not working for mathjax, so I have to place it in a code block, 可以参见参考链接[同余](https://zh.wikipedia.org/wiki/%E5%90%8C%E9%A4%98))_.  
  这性质更可进一步引申成为这样:  
  ${a\equiv b{\pmod {m}}\Rightarrow {\begin{cases}an\equiv bn{\pmod {m}},\forall n\in \mathbb {Z} \\a^{n}\equiv b^{n}{\pmod {m}},\forall n\in \mathbb {N} ^{0}\end{cases}}}$
 4. 放大缩小底数  
@@ -192,7 +193,7 @@ $$
 Cov(X, Y) = E[(X-E[X])(Y-E[Y])] = E[XY] - 2E[Y]E[X] + E[X]E[Y] = E[XY] - E[X]E[Y] 
 $$
 如果X与Y是统计独立的，那么二者之间的协方差就是0，因为两个独立的随机变量满足$E[XY]=E[X]E[Y]$。  
-但是，**反过来并不成立，即如果X与Y的协方差为0，二者并不一定是统计独立的**。  
+但是，**反过来并不成立，即如果X与Y的协方差为0，二者并不一定是统计独立的(可能是非线性相关，如 x 和 x^2)**。  
 **若两个随机变量X和Y相互独立，则Cov(X, Y)=0，因而若Cov(X, Y)不为零，则X和Y必不是相互独立的**。  
 
 **协方差与方差之间有如下关系:**  
@@ -236,7 +237,23 @@ $$
 可见，协方差矩阵是一个对称的矩阵，而且对角线是各个维度上的方差。  
 **必须要明确一点，协方差矩阵计算的是_不同维度_之间的协方差，而不是_不同样本_之间的。**  
 
+> + 当 cov(X, Y)>0时，表明 X与Y 正相关
+> + 当 cov(X, Y)<0时，表明 X与Y 负相关
+> + 当 cov(X, Y)=0时，表明 X与Y 不是线性相关
+
+`如果X与Y的协方差为0，二者并不一定是统计独立的, 只能说明X与Y不是线性相关，但有可能是非线性相关，如x和x^2`
+
 **References**:  
  + [协方差](https://baike.baidu.com/item/%E5%8D%8F%E6%96%B9%E5%B7%AE/2185936?fr=aladdin)
  + [浅谈协方差矩阵](http://pinkyjie.com/2010/08/31/covariance/)
+ + [终于明白协方差的意义了](https://blog.csdn.net/northeastsqure/article/details/50163031)
 
+## 13. 中心极限定理
+正态分布有一个很重要的性质: 在特定条件下，**大量 _统计独立_ 的随机变量的和的分布趋于正态分布，这就是中心极限定理**。中心极限定理的重要意义在于，**依据这一定理的结论，其它概率分布能够用正态分布作为近似。**
+
+## 14. 两个重要极限公式
+1. $\displaystyle \lim_{x \to 0} \frac{sin x}{x} = 1$
+2. $\displaystyle \lim_{x \to 0} (1+x)^{\frac{1}{x}} = e$ 或 $\displaystyle \lim_{x \to \infty} (1+\frac{1}{x})^{x} = e$
+
+**References**:  
+ + [两个重要极限及相关推导极限](https://blog.csdn.net/baishuiniyaonulia/article/details/78991682)

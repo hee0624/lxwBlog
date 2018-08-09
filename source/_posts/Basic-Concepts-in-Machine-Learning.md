@@ -78,6 +78,14 @@ $$
 **References:**  
 [Why do we need to normalize data before principal component analysis (PCA)?](https://stats.stackexchange.com/questions/69157/why-do-we-need-to-normalize-data-before-principal-component-analysis-pca?newreg=4f0cdbec11ff4d99ab86a607041a459d)
 
+### 11. Bootstrap方法
+Bootstrap是统计学习中一种重采样（Resampling）技术。机器学习中的Bagging，AdaBoost等方法其实都蕴含了Bootstrap的思想。  
+Bootstrap的一般的抽样方式都是**“有放回地全抽”**（其实样本量也要视情况而定，不一定非要与原样本量相等），意思就是抽取的Bootstrap样本量与原样本相同，只是在抽样方式上采取有放回地抽，这样的抽样可以进行B次，每次都可以求一个相应的统计量/估计量，最后看看这个统计量的稳定性如何（用方差表示）。  
+Bootstrap法是以原始数据为基础的模拟抽样统计推断法，可用于研究一组数据的某统计量的分布特征，特别适用于那些难以用常规方法导出对参数的区间估计、假设检验等问题。**其基本思想是**：在原始数据的范围内作**有放回**的再抽样, **样本容量仍为n**，原始数据中每个观察单位每次被抽到的概率相等为1/n , 所得样本称为Bootstrap样本。  
+**References**:  
+ + [Bootstrap方法详解——技术与实例](https://blog.csdn.net/baimafujinji/article/details/50554664)
+
+
 ### Pitfalls
 1. 当要to_categorical()的数据中存在负数时就会出现问题，所以在使用to_categorical()时必须将数据处理成非负数
 ```

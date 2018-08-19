@@ -4,13 +4,12 @@ date: 2017-03-15 23:36:05
 type: "about"
 ---
 
-Hi, I'm Xiaowei Liu(刘晓伟) from ISCAS(UCAS).  
+Hi, I'm Xiaowei Liu(刘晓伟) from MOMO.
 You can get in touch with me by [Email](mailto:liu_xiaowei@foxmail.com) or [Github](https://github.com/lxw0109).
 
 ## IT skills
 My favourite programming language is Python, whose simplicity and powerfulness fascinates me.  
-And I like Computer Network, Algorithms, and Linux very much.  
-Now I'm working on Natural Language Processing.  
+And I like Machine Learning, Computer Network, Algorithms very much.  
 **My CV:** [Chinese](/CV_zh/) / [English](/CV_zh/)  
 
 ## Interests

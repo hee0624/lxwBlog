@@ -1,18 +1,13 @@
 [
     {
-       "name":"嗅金牛",
-       "url":"https://xiujinniu.com/",
-       "desc":"一款强大的金融大数据预测平台:全局产业链、数据个性化推送、市场情绪实时洞察、基本面量化"
+        "name":"Sentiment Analysis On Movie Reviews",
+        "url":"https://github.com/lxw0109/SentimentAnalysisOnMovieReviews",
+        "desc":"Kaggle竞赛题目(LSTM, RF, etc实现)"
     },
     {
         "name":"PDFTable2Data",
         "url":"http://101.201.102.233:60000/",
         "desc":"An API extracting table data from PDF files"
-    },
-    {
-        "name":"NLP-Experiments",
-        "url":"https://github.com/lxw0109/NLP-Experiments",
-        "desc":"NLP相关知识总结与实现:基于新浪财经、人民网等网站新闻数据/Wiki-ZH/Sougou等数据集"
     },
     {
         "name":"FintechSpider",

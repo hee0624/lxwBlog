@@ -4,7 +4,7 @@ date: 2017-03-15 23:36:05
 type: "about"
 ---
 
-Hi, I'm Xiaowei Liu(刘晓伟) from MOMO.
+Hi, I'm Xiaowei Liu(刘晓伟) from [MOMO](https://www.immomo.com/newsroom).
 You can get in touch with me by [Email](mailto:liu_xiaowei@foxmail.com) or [Github](https://github.com/lxw0109).
 
 ## IT skills
